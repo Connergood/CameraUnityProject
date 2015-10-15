@@ -5,7 +5,13 @@ public class PlayerControl : MonoBehaviour {
 	
 	[SerializeField] GameObject self;
 	Rigidbody rigidBody;
-	
+
+	public enum State{
+		normal,
+		jumping
+	}
+	public State state;
+
 	// Use this for initialization
 	void Start () {
 		self.transform.position = new Vector3 (0.0f, 0.0f, 16.0f);
@@ -20,10 +26,15 @@ public class PlayerControl : MonoBehaviour {
 		if (Input.GetKey("right")) {
 			self.transform.position += new Vector3(0.1f, 0.0f, 0.0f);
 		}
-		if (Input.GetKeyDown("up")) {
-			if(rigidBody.velocity.y >= -0.5f){
-				rigidBody.AddForce(Vector3.up *300.0f);
-			}
+		if (Input.GetKeyDown("up") && state == State.normal) {
+			state = State.jumping;
+			rigidBody.AddForce(Vector3.up *300.0f);
+		}
+	}
+
+	void OnCollisionEnter(Collision collision){
+		if (collision.transform.tag == "Ground" && state == State.jumping){
+			state = State.normal;
 		}
 	}
 }

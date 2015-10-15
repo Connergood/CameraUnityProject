@@ -12,6 +12,7 @@ public class CameraControls : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		//Camera movement.... Yay!
 		if (Input.GetKey("a")) {
 			self.transform.position += new Vector3(-0.1f, 0.0f, 0.0f);
 		}
@@ -22,7 +23,7 @@ public class CameraControls : MonoBehaviour {
 			self.transform.position += new Vector3(0.0f, 0.1f, 0.0f);
 		}
 		if (Input.GetKey("s")) {
-			self.transform.position += new Vector3(0.1f, -0.1f, 0.0f);
+			self.transform.position += new Vector3(0.0f, -0.1f, 0.0f);
 		}
 	}
 }
