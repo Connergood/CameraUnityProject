@@ -11,7 +11,7 @@ public class PressurePad : MonoBehaviour {
 	[SerializeField] float rotate;
 
 	public enum Type{
-		weighted,
+		weighted, //Don't quite know how to implement this yet
 		oneTime
 	}
 	public Type type;
@@ -35,7 +35,7 @@ public class PressurePad : MonoBehaviour {
 			if (!activated){
 				Vector3 location = new Vector3(initialCubeLocation.x + translateX,
 				                               initialCubeLocation.y + translateY,
-				                               0.0f);
+				                               initialCubeLocation.z);
 				cubeToMove.transform.position = location;
 				cubeToMove.transform.RotateAround(cubeToMove.transform.position, new Vector3(0.0f, 0.0f, 1.0f),rotate);
 				activated = true;
