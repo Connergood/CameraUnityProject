@@ -28,12 +28,12 @@ public class PlayerControl : MonoBehaviour {
 		}
 		if (Input.GetKeyDown("up") && state == State.normal) {
 			state = State.jumping;
-			rigidBody.AddForce(Vector3.up *300.0f);
+			rigidBody.AddForce(Vector3.up *350.0f);
 		}
 	}
 
 	void OnCollisionEnter(Collision collision){
-		if (collision.transform.tag == "Ground" && state == State.jumping){
+		if ((collision.transform.tag == "Ground" || collision.transform.tag == "PressurePad") && state == State.jumping){
 			state = State.normal;
 		}
 	}
