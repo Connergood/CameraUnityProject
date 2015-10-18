@@ -58,7 +58,7 @@ public class CameraObject : MonoBehaviour {
 		//if we are locked move the object based on camera movement
 		if (state == State.locked) {
 			// The z is 0.0f so that the player is not affected by the block's movement
-			self.transform.position = new Vector3 (controller.transform.position.x + difference.x, controller.transform.position.y + difference.y, 0.0f);
+			self.transform.position = new Vector3 (controller.transform.position.x + difference.x, controller.transform.position.y + difference.y, 17.0f);
 			//Limit the object to its zone
 			if(initialLocation.x + limitXRight < self.transform.position.x) {
 				self.transform.position = new Vector3(initialLocation.x + limitXRight, self.transform.position.y, self.transform.position.z);

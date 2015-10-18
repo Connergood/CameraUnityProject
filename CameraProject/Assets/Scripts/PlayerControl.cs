@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayerControl : MonoBehaviour {
 	
 	[SerializeField] GameObject self;
+	[SerializeField] Vector2 initialPosition;
 	Rigidbody rigidBody;
 
 	public enum State{
@@ -14,7 +15,7 @@ public class PlayerControl : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		self.transform.position = new Vector3 (0.0f, 0.0f, 16.0f);
+		self.transform.position = new Vector3 (initialPosition.x, initialPosition.y, 16.0f);
 		rigidBody = self.GetComponent<Rigidbody>();
 	}
 	
@@ -28,7 +29,7 @@ public class PlayerControl : MonoBehaviour {
 		}
 		if (Input.GetKeyDown("up") && state == State.normal) {
 			state = State.jumping;
-			rigidBody.AddForce(Vector3.up *350.0f);
+			rigidBody.AddForce(Vector3.up *450.0f);
 		}
 	}
 
