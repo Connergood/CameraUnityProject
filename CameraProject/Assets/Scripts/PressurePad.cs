@@ -10,11 +10,13 @@ public class PressurePad : MonoBehaviour {
 	[SerializeField] float translateY;
 	[SerializeField] float rotate;
 
-	public enum Type{
-		weighted, //Don't quite know how to implement this yet
+	Vector3 to;
+
+	public enum State{
+		weighted,
 		oneTime
 	}
-	public Type type;
+	public State type;
 
 	private bool activated;
 
@@ -24,6 +26,7 @@ public class PressurePad : MonoBehaviour {
 	void Start () {
 		initialCubeLocation = cubeToMove.transform.position;
 		activated = false;
+		to = new Vector3(cubeToMove.transform.position.x + translateX, cubeToMove.transform.position.y + translateY, cubeToMove.transform.position.z);
 	}
 	
 	// Update is called once per frame
@@ -31,19 +34,33 @@ public class PressurePad : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision collision){
-		if (collision.transform.tag == "Player" && type == Type.oneTime){
+		if (collision.transform.tag == "Player" || collision.transform.tag == "Weight"){
 			if (!activated){
-				/*Vector3 location = new Vector3(initialCubeLocation.x + translateX,
-				                               initialCubeLocation.y + translateY,
-				                               initialCubeLocation.z);
-				cubeToMove.transform.position = location;*/
-				StartCoroutine(MoveCube(new Vector3(translateX, translateY, 0.0f), 3.0f));
-				StartCoroutine(RotateCube(new Vector3(0.0f, 0.0f, 1.0f) * rotate, 3.0f)) ;
-				//cubeToMove.transform.RotateAround(cubeToMove.transform.position, new Vector3(0.0f, 0.0f, 1.0f),rotate);
+				StopAllCoroutines();
+				StartCoroutine(MoveCubeTo(2.0f));
+				StartCoroutine(RotateCube(new Vector3(0.0f, 0.0f, 1.0f) * rotate, 2.0f)) ;
 				activated = true;
 				self.transform.localScale = new Vector3(self.transform.localScale.x, self.transform.localScale.y/2, self.transform.localScale.z);
+				StartCoroutine(Wait ());
 			}
 		}
+	}
+
+	void OnCollisionExit(Collision collision){
+		if ((collision.transform.tag == "Player" || collision.transform.tag == "Weight")){
+			if (activated && type == State.weighted){
+				StopAllCoroutines();
+				StartCoroutine(MoveCubeFrom(2.0f));
+				StartCoroutine(RotateCube(new Vector3(0.0f, 0.0f, 1.0f) * -rotate, 2.0f)) ;
+				activated = false;
+				self.transform.localScale = new Vector3(self.transform.localScale.x, self.transform.localScale.y*2, self.transform.localScale.z);
+				StartCoroutine(Wait ());
+			}
+		}
+	}
+
+	IEnumerator Wait(){
+		yield return new WaitForSeconds (3.0f);
 	}
 
 	IEnumerator RotateCube(Vector3 byAngles, float inTime)
@@ -57,13 +74,23 @@ public class PressurePad : MonoBehaviour {
 		}
 	}
 
-	IEnumerator MoveCube(Vector3 distance, float inTime)
+	//End Location Initial Position
+	IEnumerator MoveCubeFrom(float inTime)
 	{
-		Vector3 from = cubeToMove.transform.position;
-		Vector3 to = cubeToMove.transform.position + distance;
+		Vector3 start = cubeToMove.transform.position;
 		for(float t = 0f ; t < 1f ; t += Time.deltaTime/inTime)
 		{
-			cubeToMove.transform.position = Vector3.Lerp(from, to, t);
+			cubeToMove.transform.position = Vector3.Lerp(start, initialCubeLocation, t);
+			yield return null ;
+		}
+	}
+	//End Location To
+	IEnumerator MoveCubeTo(float inTime)
+	{
+		Vector3 start = cubeToMove.transform.position;
+		for(float t = 0f ; t < 1f ; t += Time.deltaTime/inTime)
+		{
+			cubeToMove.transform.position = Vector3.Lerp(start, to, t);
 			yield return null ;
 		}
 	}

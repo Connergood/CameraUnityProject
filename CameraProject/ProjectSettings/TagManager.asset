@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - PressurePad
   - Wall
+  - Weight
   layers:
   - Default
   - TransparentFX

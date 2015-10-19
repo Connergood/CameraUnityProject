@@ -78,4 +78,20 @@ public class CameraObject : MonoBehaviour {
 			                                  self.transform.position.y - controller.transform.position.y);
 		}
 	}
+
+	IEnumerator MoveCube(float inTime)
+	{
+		Vector3 from = self.transform.position;
+		Vector3 to;
+		if (state == State.locked) {
+			to = new Vector3(self.transform.position.x, self.transform.position.y, 17.0f);;
+		} else {
+			to = new Vector3(self.transform.position.x, self.transform.position.y, 16.0f);;
+		}
+		for(float t = 0f ; t < 1f ; t += Time.deltaTime/inTime)
+		{
+			self.transform.position = Vector3.Lerp(from, to, t);
+			yield return null ;
+		}
+	}
 }

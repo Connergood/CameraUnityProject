@@ -9,9 +9,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 434058}
   - 20: {fileID: 2046080}
-  - 124: {fileID: 12457710}
-  - 92: {fileID: 9256472}
-  - 81: {fileID: 8103666}
   m_Layer: 0
   m_Name: minimap
   m_TagString: Untagged
@@ -64,27 +61,6 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
   m_StereoMirrorMode: 0
---- !u!81 &8103666
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 113720}
-  m_Enabled: 1
---- !u!92 &9256472
-Behaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 113720}
-  m_Enabled: 1
---- !u!124 &12457710
-Behaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 113720}
-  m_Enabled: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
