@@ -8,6 +8,8 @@ public class PlayerControl : MonoBehaviour {
 	Rigidbody rigidBody;
 	ArrayList fallZones;
 
+    public bool alive = true;
+
 	public enum State{
 		normal,
 		jumping
@@ -38,6 +40,10 @@ public class PlayerControl : MonoBehaviour {
 			state = State.jumping;
 			rigidBody.AddForce(Vector3.up *450.0f);
 		}
+        if (alive == false)
+        {
+
+        }
 	}
 
 	void OnCollisionEnter(Collision collision){
