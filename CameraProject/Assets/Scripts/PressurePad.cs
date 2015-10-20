@@ -50,7 +50,7 @@ public class PressurePad : MonoBehaviour {
 		if ((collision.transform.tag == "Player" || collision.transform.tag == "Weight")){
 			if (activated && type == State.weighted){
 				StopAllCoroutines();
-				StartCoroutine(MoveCubeFrom(2.0f));
+				StartCoroutine(MoveCubeFrom(3.0f));
 				StartCoroutine(RotateCube(new Vector3(0.0f, 0.0f, 1.0f) * -rotate, 2.0f)) ;
 				activated = false;
 				self.transform.localScale = new Vector3(self.transform.localScale.x, self.transform.localScale.y*2, self.transform.localScale.z);
