@@ -49,6 +49,10 @@ public class PlayerControl : MonoBehaviour {
 				rigidBody.AddForce (Vector3.up * 450.0f);
 			}
 		}
+        if (alive == false)
+        {
+
+        }
 	}
 	
 	void OnCollisionEnter(Collision collision){
