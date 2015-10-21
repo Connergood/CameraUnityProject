@@ -26,6 +26,7 @@ public class PlayerControl : MonoBehaviour {
 		rigidBody = self.GetComponent<Rigidbody>();
 		canMoveLeft = true;
 		canMoveRight = true;
+		alive = true;
 		//fallZones.Add(self.transform.child
 	}
 	

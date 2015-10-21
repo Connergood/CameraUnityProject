@@ -3,9 +3,9 @@ using System.Collections;
 
 public class Monster : MonoBehaviour {
 	
-	[SerializeField] GameObject self;
-	[SerializeField] Vector3 initialPos;
-	[SerializeField] Camera camera;
+	public GameObject self;
+	public Camera camera;
+	public Vector3 initialPos;
 	public GameObject player;
 	
 	public enum State
@@ -17,9 +17,9 @@ public class Monster : MonoBehaviour {
 
 	public Monster () {
 
-		initialPos = self.transform.position;
+		self.transform.position = initialPos;
 		player = GameObject.FindWithTag("Player");
-		self = GameObject.FindWithTag ("Monster");
+		//self = GameObject.FindWithTag ("Monster");
 	}
 	
 	public void cameraCheck()
