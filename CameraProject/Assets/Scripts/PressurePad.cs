@@ -40,8 +40,10 @@ public class PressurePad : MonoBehaviour {
 				StartCoroutine(MoveCubeTo(2.0f));
 				StartCoroutine(RotateCube(new Vector3(0.0f, 0.0f, 1.0f) * rotate, 2.0f)) ;
 				activated = true;
-				self.transform.localScale = new Vector3(self.transform.localScale.x, self.transform.localScale.y/2, self.transform.localScale.z);
 				StartCoroutine(Wait ());
+				MeshRenderer mr = self.GetComponent<MeshRenderer>();
+				Material m = mr.material;
+				m.color = Color.red;
 			}
 		}
 	}
@@ -53,7 +55,9 @@ public class PressurePad : MonoBehaviour {
 				StartCoroutine(MoveCubeFrom(3.0f));
 				StartCoroutine(RotateCube(new Vector3(0.0f, 0.0f, 1.0f) * -rotate, 2.0f)) ;
 				activated = false;
-				self.transform.localScale = new Vector3(self.transform.localScale.x, self.transform.localScale.y*2, self.transform.localScale.z);
+				MeshRenderer mr = self.GetComponent<MeshRenderer>();
+				Material m = mr.material;
+				m.color = Color.green;
 				StartCoroutine(Wait ());
 			}
 		}
