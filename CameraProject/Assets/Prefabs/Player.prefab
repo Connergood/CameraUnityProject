@@ -31,7 +31,7 @@ GameObject:
   - 75: {fileID: 7529074}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -192,8 +192,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   self: {fileID: 165738}
-  initialPosition: {x: 0, y: 0}
+  initialPosition: {x: 0, y: 0, z: 0}
+  minY: 0
+  alive: 1
   state: 0
+  canMoveLeft: 0
+  canMoveRight: 0
 --- !u!135 &13546924
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -225,7 +229,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 165738}

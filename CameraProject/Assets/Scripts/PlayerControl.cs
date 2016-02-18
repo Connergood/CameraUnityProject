@@ -4,7 +4,7 @@ using System.Collections;
 public class PlayerControl : MonoBehaviour {
 	
 	[SerializeField] GameObject self;
-	[SerializeField] Vector2 initialPosition;
+	[SerializeField] Vector3 initialPosition;
 	[SerializeField] float minY;
 	Rigidbody rigidBody;
 	ArrayList fallZones;
@@ -22,8 +22,8 @@ public class PlayerControl : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		self.transform.position = new Vector3 (initialPosition.x, initialPosition.y, 15.9f);
-		rigidBody = self.GetComponent<Rigidbody>();
+        self.transform.position = initialPosition;
+        rigidBody = self.GetComponent<Rigidbody>();
 		canMoveLeft = true;
 		canMoveRight = true;
 		alive = true;
