@@ -23,7 +23,7 @@ public class Main : MonoBehaviour {
 		tm.color = Color.black;
 		tm.anchor = TextAnchor.MiddleCenter;
 		tm.alignment = TextAlignment.Center;
-		tm.fontSize = 20;
+		tm.fontSize = text.GetComponent<TextMesh>().fontSize*3/4;
 	}
 	
 	// Update is called once per frame
@@ -33,7 +33,7 @@ public class Main : MonoBehaviour {
 			pc.canMoveRight = false;
 			cc.active = false;
 			text.transform.position = new Vector3(mainCamera.transform.position.x, mainCamera.transform.position.y + 1, 15.0f);
-			theReason.transform.position = new Vector3(text.transform.position.x, text.transform.position.y - 3, text.transform.position.z);
+			theReason.transform.position = new Vector3(text.transform.position.x, text.transform.position.y - 2, text.transform.position.z);
 			TextMesh tm = theReason.GetComponent<TextMesh>();
 			tm.text = reason;
 

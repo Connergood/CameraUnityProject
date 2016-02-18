@@ -58,7 +58,7 @@ public class CameraObject : MonoBehaviour {
 		//if we are locked move the object based on camera movement
 		if (state == State.locked) {
 			// The z is 0.0f so that the player is not affected by the block's movement
-			self.transform.position = new Vector3 (controller.transform.position.x + difference.x, controller.transform.position.y + difference.y, 17.0f);
+			self.transform.position = new Vector3 (controller.transform.position.x + difference.x, controller.transform.position.y + difference.y, 1.0f);
 			//Limit the object to its zone
 			if(initialLocation.x + limitXRight < self.transform.position.x) {
 				self.transform.position = new Vector3(initialLocation.x + limitXRight, self.transform.position.y, self.transform.position.z);
@@ -73,7 +73,7 @@ public class CameraObject : MonoBehaviour {
 				self.transform.position = new Vector3(self.transform.position.x, initialLocation.y + limitYDown, self.transform.position.z);
 			}
 		} else { // if we are not locked move the object back to the plane the player is in and calculate difference
-			self.transform.position = new Vector3 (self.transform.position.x, self.transform.position.y, 16.0f);
+			self.transform.position = new Vector3 (self.transform.position.x, self.transform.position.y, 0.0f);
 			difference = new Vector2 (self.transform.position.x - controller.transform.position.x,
 			                                  self.transform.position.y - controller.transform.position.y);
 		}
@@ -84,9 +84,9 @@ public class CameraObject : MonoBehaviour {
 		Vector3 from = self.transform.position;
 		Vector3 to;
 		if (state == State.locked) {
-			to = new Vector3(self.transform.position.x, self.transform.position.y, 17.0f);;
+			to = new Vector3(self.transform.position.x, self.transform.position.y, 1.0f);;
 		} else {
-			to = new Vector3(self.transform.position.x, self.transform.position.y, 16.0f);;
+			to = new Vector3(self.transform.position.x, self.transform.position.y, 0.0f);;
 		}
 		for(float t = 0f ; t < 1f ; t += Time.deltaTime/inTime)
 		{
