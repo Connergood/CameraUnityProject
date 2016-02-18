@@ -12,6 +12,8 @@ public class Grid : MonoBehaviour {
 
     public TileSet tileSet;
 
+    public bool draggable;
+
 	void OnDrawGizmos()
     {
         Vector3 pos = Camera.current.transform.position;

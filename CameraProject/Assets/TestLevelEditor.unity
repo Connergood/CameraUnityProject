@@ -127,5 +127,6 @@ MonoBehaviour:
   width: 1
   height: 1
   color: {r: .980392218, g: .980392218, b: .980392218, a: 1}
-  tilePrefab: {fileID: 411812, guid: bb8548d927c5173408c9d40f10d8d99c, type: 2}
+  tilePrefab: {fileID: 431222, guid: 705c80209fe51964da1606ad85c6a3d4, type: 2}
   tileSet: {fileID: 11400000, guid: 5c6a186baeff1484c87c98799df4f0d0, type: 2}
+  draggable: 1

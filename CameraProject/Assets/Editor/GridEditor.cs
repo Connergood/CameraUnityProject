@@ -6,7 +6,11 @@ using System.IO;
 public class GridEditor : Editor {
 
     Grid grid;
+
     private int oldIndex = 0;
+
+    private Vector3 mouseBeginPos;
+    private Vector3 mouseEndPos;
 
     void OnEnable()
     {
@@ -40,7 +44,7 @@ public class GridEditor : Editor {
 
     public override void OnInspectorGUI()
     {
-        //bas.OnInspectorGUI();
+        //base.OnInspectorGUI();
 
         grid.width = createSlider("Width", grid.width);
         grid.height = createSlider("Height", grid.height);
@@ -99,6 +103,14 @@ public class GridEditor : Editor {
                 }
             }
         }
+
+        EditorGUI.BeginChangeCheck();
+
+        bool draggable = EditorGUILayout.Toggle("Toggle Dragging: ", grid.draggable);
+        if (EditorGUI.EndChangeCheck())
+        {
+            grid.draggable = draggable;
+        }
     }
 
     private float createSlider(string labelName, float sliderPosition)
@@ -117,28 +129,128 @@ public class GridEditor : Editor {
         Ray ray = Camera.current.ScreenPointToRay(new Vector3(E.mousePosition.x, - E.mousePosition.y + Camera.current.pixelHeight));
         Vector3 mousePos = ray.origin;
 
-        if (E.isMouse && E.type == EventType.mouseDown)
+        if (E.isMouse && E.type == EventType.mouseDown & E.button == 0)
         {
             GUIUtility.hotControl = controlId;
             E.Use();
 
-            GameObject gameObject;
-            Transform prefab = grid.tilePrefab;
-            if (prefab)
+            if (grid.draggable)
             {
-                Undo.IncrementCurrentGroup();
-                gameObject = (GameObject)PrefabUtility.InstantiatePrefab(prefab.gameObject);
-                Vector3 aligned = new Vector3(Mathf.Floor(mousePos.x / grid.width) * grid.width + grid.width / 2.0f, Mathf.Floor(mousePos.y / grid.height) * grid.height + grid.height / 2.0f, 0.0f);
-                gameObject.transform.position = aligned;
-                gameObject.transform.parent = grid.transform;
-                Undo.RegisterCreatedObjectUndo(gameObject, "Create" + gameObject.name);
+                mouseBeginPos = mousePos;
+            }
+            else {
+
+                GameObject gameObject;
+                Transform prefab = grid.tilePrefab;
+                if (prefab)
+                {
+                    Undo.IncrementCurrentGroup();
+                    gameObject = (GameObject)PrefabUtility.InstantiatePrefab(prefab.gameObject);
+                    Vector3 aligned = new Vector3(Mathf.Floor(mousePos.x / grid.width) * grid.width + grid.width / 2.0f, Mathf.Floor(mousePos.y / grid.height) * grid.height + grid.height / 2.0f, 0.0f);
+
+                    if (GetTransformFromPosition(aligned) != null) return;
+
+                    gameObject.transform.position = aligned;
+                    gameObject.transform.parent = grid.transform;
+                    Undo.RegisterCreatedObjectUndo(gameObject, "Create" + gameObject.name);
+                }
+            }
+        }
+        
+        if(E.isMouse & E.type == EventType.MouseDown && (E.button == 0 || E.button == 1))
+        {
+            GUIUtility.hotControl = controlId;
+            E.Use();
+            Vector3 aligned = new Vector3(Mathf.Floor(mousePos.x / grid.width) * grid.width + grid.width / 2.0f, Mathf.Floor(mousePos.y / grid.height) * grid.height + grid.height / 2.0f, 0.0f);
+            Transform transform = GetTransformFromPosition(aligned);
+            if (transform != null)
+            {
+                DestroyImmediate(transform.gameObject);
             }
         }
 
-        if(E.isMouse && E.type == EventType.MouseUp)
+        if (E.isMouse && E.type == EventType.MouseUp && (E.button == 0 || E.button == 1))
         {
+            if (grid.draggable && E.button == 0)
+            {
+                mouseEndPos = mousePos;
+                FillArea(mouseBeginPos, mouseEndPos);
+
+                mouseEndPos = Vector3.zero;
+                mouseBeginPos = Vector3.zero;
+            }
             GUIUtility.hotControl = 0;
         }
+    }
+
+    Transform GetTransformFromPosition(Vector3 aligned)
+    {
+        for (int i = 0; i < grid.transform.childCount; i++)
+        {
+            Transform transform = grid.transform.GetChild(i);
+            if(transform.position == aligned)
+            {
+                return transform;
+            }
+        }
+        return null;
+    }
+
+    void FillArea(Vector3 _StartPosition, Vector3 _EndPosition)
+    {
+
+        Transform prefab = grid.tilePrefab;
+        if (prefab == null)
+        {
+            Debug.LogError("No prefab attached to grid.");
+        }
+
+        _StartPosition.x = Mathf.Floor(_StartPosition.x / grid.width) * grid.width;
+        _StartPosition.y = Mathf.Floor(_StartPosition.y / grid.height) * grid.height;
+
+        _EndPosition.x = Mathf.Floor(_EndPosition.x / grid.width) * grid.width;
+        _EndPosition.y = Mathf.Floor(_EndPosition.y / grid.height) * grid.height;
+
+        Vector2 numberOfTilesToFill = new Vector2();
+
+
+        // look if there is a drag from right to left or bottom to top
+        // if so swap entries
+        numberOfTilesToFill.x = Mathf.Abs(_StartPosition.x - _EndPosition.x);
+        numberOfTilesToFill.y = Mathf.Abs(_StartPosition.y - _EndPosition.y);
+
+        // swap to fill from left to right
+        if (_StartPosition.x >= _EndPosition.x)
+        {
+            Vector3 tmp = new Vector3();
+            tmp = _EndPosition;
+            _StartPosition = _EndPosition;
+            _EndPosition = tmp;
+        }
+
+        numberOfTilesToFill.x = numberOfTilesToFill.x / grid.width + 1.0f;
+        numberOfTilesToFill.y = numberOfTilesToFill.y / grid.height + 1.0f;
+
+        for (int i = 0; i < numberOfTilesToFill.x; i++)
+        {
+            for (int j = 0; j < numberOfTilesToFill.y; j++)
+            {
+
+                Vector3 realWorldPosition = new Vector3();
+                GameObject gameObject;
+
+                realWorldPosition.x = _StartPosition.x + (i * grid.width) + grid.width / 2.0f;
+                realWorldPosition.y = _StartPosition.y - (j * grid.height) + grid.height / 2.0f;
+                realWorldPosition.z = 0.0f;
+
+                gameObject = (GameObject)PrefabUtility.InstantiatePrefab(prefab.gameObject);
+                gameObject.transform.position = realWorldPosition;
+                gameObject.transform.parent = grid.transform;
+
+            }
+
+        }
+
     }
 
 }
