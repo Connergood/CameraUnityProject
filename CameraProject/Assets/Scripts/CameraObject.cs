@@ -13,6 +13,8 @@ public class CameraObject : MonoBehaviour {
 	[SerializeField] float limitYUp;
 	[SerializeField] float limitYDown;
 
+    public bool isViewedObject;
+
 	//Hold onto initial location of object so we can calculate if it's out of its box
 	Vector3 initialLocation;
 
