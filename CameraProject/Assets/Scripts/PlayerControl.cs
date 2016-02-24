@@ -39,13 +39,14 @@ public class PlayerControl : MonoBehaviour {
 				m.reason = "The Player Fell Off The Map";
 				return;
 			}
-			if (Input.GetKey ("left") && canMoveLeft) {
+			if ((Input.GetKey ("left") || Input.GetKey ("j"))&& canMoveLeft) {
 				self.transform.position += new Vector3 (-0.1f, 0.0f, 0.0f);
 			}
-			if (Input.GetKey ("right") && canMoveRight) {
+            if ((Input.GetKey("right") || Input.GetKey("l")) && canMoveRight)
+            {
 				self.transform.position += new Vector3 (0.1f, 0.0f, 0.0f);
 			}
-			if (Input.GetKeyDown ("up") && state == State.normal) {
+			if ((Input.GetKeyDown ("up") || Input.GetKey ("i")) && state == State.normal) {
 				state = State.jumping;
 				rigidBody.AddForce (Vector3.up * 450.0f);
 			}
