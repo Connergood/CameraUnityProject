@@ -5,13 +5,14 @@ public class CameraObject : MonoBehaviour {
 
 	//For setting grabbing self and Camera -- Definitely easier way to do this I just forgot it
 	[SerializeField] GameObject self;
-	[SerializeField] GameObject controller;
+	GameObject controller;
 
 	//Limit X and Y coordinates to a box so they can't just pull objects to anywhere They'd like
 	[SerializeField] float limitXLeft;
 	[SerializeField] float limitXRight;
 	[SerializeField] float limitYUp;
 	[SerializeField] float limitYDown;
+    [SerializeField] bool interactWhileLocked;
 
 	//Hold onto initial location of object so we can calculate if it's out of its box
 	Vector3 initialLocation;
@@ -28,6 +29,8 @@ public class CameraObject : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        controller = GameObject.FindGameObjectWithTag("MainCamera");
+
 		//Get the renderer so we can make the objects blue
 		Renderer rend = GetComponent<Renderer>();
 		rend.material.color = Color.blue;
@@ -57,8 +60,14 @@ public class CameraObject : MonoBehaviour {
 		}
 		//if we are locked move the object based on camera movement
 		if (state == State.locked) {
-			// The z is 0.0f so that the player is not affected by the block's movement
-			self.transform.position = new Vector3 (controller.transform.position.x + difference.x, controller.transform.position.y + difference.y, 1.0f);
+            // The z is 0.0f so that the player is not affected by the block's movement
+            if (interactWhileLocked)
+            {
+                self.transform.position = new Vector3(controller.transform.position.x + difference.x, controller.transform.position.y + difference.y, 0.0f);
+            } else
+            {
+                self.transform.position = new Vector3(controller.transform.position.x + difference.x, controller.transform.position.y + difference.y, 1.0f);
+            }
 			//Limit the object to its zone
 			if(initialLocation.x + limitXRight < self.transform.position.x) {
 				self.transform.position = new Vector3(initialLocation.x + limitXRight, self.transform.position.y, self.transform.position.z);
@@ -82,11 +91,17 @@ public class CameraObject : MonoBehaviour {
 	IEnumerator MoveCube(float inTime)
 	{
 		Vector3 from = self.transform.position;
-		Vector3 to;
+        Vector3 to = new Vector3(0.0f, 0.0f);
 		if (state == State.locked) {
-			to = new Vector3(self.transform.position.x, self.transform.position.y, 1.0f);;
+            if (interactWhileLocked)
+            {
+                to = new Vector3(self.transform.position.x, self.transform.position.y, 0.0f);
+            } else
+            {
+                to = new Vector3(self.transform.position.x, self.transform.position.y, 0.0f);
+            }
 		} else {
-			to = new Vector3(self.transform.position.x, self.transform.position.y, 0.0f);;
+			to = new Vector3(self.transform.position.x, self.transform.position.y, 0.0f);
 		}
 		for(float t = 0f ; t < 1f ; t += Time.deltaTime/inTime)
 		{

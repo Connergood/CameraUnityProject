@@ -4,13 +4,12 @@ using System.Collections;
 public class CameraControls : MonoBehaviour {
 
 	[SerializeField] GameObject self;
-	[SerializeField] Vector2 initialPosition;
 
 	public bool active = true;
 
 	// Use this for initialization
 	void Start () {
-		self.transform.position = new Vector3 (initialPosition.x, initialPosition.y, -10.0f);
+        self.transform.position = new Vector3(self.transform.position.x, self.transform.position.y, -5.0f);
 	}
 	
 	// Update is called once per frame

@@ -11,7 +11,6 @@ GameObject:
   - 33: {fileID: 3365142}
   - 135: {fileID: 13519234}
   - 23: {fileID: 2308440}
-  - 54: {fileID: 5437572}
   m_Layer: 0
   m_Name: Sphere (3)
   m_TagString: Untagged
@@ -67,6 +66,7 @@ GameObject:
   - 65: {fileID: 6571156}
   - 23: {fileID: 2357366}
   - 114: {fileID: 11464758}
+  - 54: {fileID: 5432628}
   m_Layer: 0
   m_Name: SneakMonster
   m_TagString: Untagged
@@ -85,7 +85,6 @@ GameObject:
   - 33: {fileID: 3303494}
   - 135: {fileID: 13529750}
   - 23: {fileID: 2399496}
-  - 54: {fileID: 5441728}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -112,7 +111,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 167536}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -47.5299988, y: 9.02000046, z: 16}
+  m_LocalPosition: {x: 5.87740517, y: .341194212, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 467694}
@@ -312,35 +311,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 167536}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &5437572
+--- !u!54 &5432628
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 105976}
+  m_GameObject: {fileID: 167536}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 10
   m_AngularDrag: .0500000007
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 120
-  m_CollisionDetection: 0
---- !u!54 &5441728
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 194272}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: .0500000007
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 120
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &6571156
 BoxCollider:
@@ -366,9 +350,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   self: {fileID: 167536}
-  initialPos: {x: -47, y: 9, z: 16}
   camera: {fileID: 0}
-  player: {fileID: 0}
+  initialPos: {x: 5.87740517, y: .341194212, z: 0}
+  speed: 10
   state: 1
 --- !u!135 &13516030
 SphereCollider:
@@ -424,7 +408,23 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Mass
+      value: .100000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 167536}

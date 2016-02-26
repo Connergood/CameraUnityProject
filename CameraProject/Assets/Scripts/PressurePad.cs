@@ -5,10 +5,13 @@ public class PressurePad : MonoBehaviour {
 
 	[SerializeField] GameObject self;
 	[SerializeField] GameObject cubeToMove;
+    [SerializeField] bool isActivatedByCamera;
 
 	[SerializeField] float translateX;
 	[SerializeField] float translateY;
 	[SerializeField] float rotate;
+
+    GameObject camera;
 
 	Vector3 to;
 
@@ -26,16 +29,51 @@ public class PressurePad : MonoBehaviour {
 	void Start () {
 		initialCubeLocation = cubeToMove.transform.position;
 		activated = false;
+        camera = GameObject.FindGameObjectWithTag("MainCamera");
 		to = new Vector3(cubeToMove.transform.position.x + translateX, cubeToMove.transform.position.y + translateY, cubeToMove.transform.position.z);
+        if (isActivatedByCamera)
+        {
+            self.GetComponent<Renderer>().material.color = Color.magenta;
+        }
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        if (!activated && isActivatedByCamera)
+        {
+            if (Mathf.Abs(camera.transform.position.x - self.transform.position.x) < 2.5 &&
+                Mathf.Abs(camera.transform.position.y - self.transform.position.y) < 2.5)
+            {
+                activated = true;
+                StopAllCoroutines();
+                StartCoroutine(MoveCubeTo(2.0f));
+                StartCoroutine(RotateCube(new Vector3(0.0f, 0.0f, 1.0f) * rotate, 2.0f));
+                StartCoroutine(Wait());
+                MeshRenderer mr = self.GetComponent<MeshRenderer>();
+                Material m = mr.material;
+                m.color = Color.red;
+            }
+        } else if (isActivatedByCamera)
+        {
+            if (!(Mathf.Abs(camera.transform.position.x - self.transform.position.x) < 2.5 &&
+                Mathf.Abs(camera.transform.position.y - self.transform.position.y) < 2.5) &&
+                    type == State.weighted)
+            {
+                activated = false;
+                StopAllCoroutines();
+                StartCoroutine(MoveCubeFrom(3.0f));
+                StartCoroutine(RotateCube(new Vector3(0.0f, 0.0f, 1.0f) * -rotate, 2.0f));
+                MeshRenderer mr = self.GetComponent<MeshRenderer>();
+                Material m = mr.material;
+                m.color = Color.magenta;
+                StartCoroutine(Wait());
+            }
+        }
 	}
 
 	void OnCollisionEnter(Collision collision){
 		if (collision.transform.tag == "Player" || collision.transform.tag == "Weight"){
-			if (!activated){
+			if (!activated && !isActivatedByCamera){
 				StopAllCoroutines();
 				StartCoroutine(MoveCubeTo(2.0f));
 				StartCoroutine(RotateCube(new Vector3(0.0f, 0.0f, 1.0f) * rotate, 2.0f)) ;

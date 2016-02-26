@@ -5,7 +5,6 @@ public class Monster : MonoBehaviour {
 	
 	public GameObject self;
 	public Camera camera;
-	public Vector3 initialPos;
 	public GameObject player;
 	
 	public enum State
@@ -17,7 +16,6 @@ public class Monster : MonoBehaviour {
 
 	public Monster () {
 
-		self.transform.position = initialPos;
 		player = GameObject.FindWithTag("Player");
 		//self = GameObject.FindWithTag ("Monster");
 	}

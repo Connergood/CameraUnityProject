@@ -4,11 +4,11 @@ using System.Collections;
 public class mSneak : MonoBehaviour {
 
 	[SerializeField] GameObject self;
-	[SerializeField] Camera camera;
-	[SerializeField] Vector3 initialPos;
-	[SerializeField] GameObject player;
+	Camera camera;
+	GameObject player;
+    [SerializeField] float speed = 25.0f;
 
-	public enum State
+    public enum State
 	{
 		onCamera,
 		offCamera
@@ -20,8 +20,8 @@ public class mSneak : MonoBehaviour {
 	void Start (){
 		active = false;
 		state = State.offCamera;
-		self.transform.position = initialPos;
 		player = GameObject.FindWithTag("Player");
+        camera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
 	}
 	
 	// Update is called once per frame
@@ -34,8 +34,11 @@ public class mSneak : MonoBehaviour {
 		if (state == State.offCamera && active == true)
 		{
 			Vector2 d = vToPlayer();
-			this.transform.position = new Vector3(this.transform.position.x + d.x, this.transform.position.y + d.y, this.transform.position.z);
-		}
+			this.GetComponent<Rigidbody>().velocity = new Vector3(d.x * speed, d.y * speed);
+		} else
+        {
+            this.GetComponent<Rigidbody>().velocity = new Vector3(0, 0);
+        }
 	}
 	
 	Vector2 vToPlayer()

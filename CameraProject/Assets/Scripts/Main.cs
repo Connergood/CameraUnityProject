@@ -4,18 +4,20 @@ using System.Collections;
 public class Main : MonoBehaviour {
 
 	GameObject player;
-	[SerializeField] Camera mainCamera;
+	Camera mainCamera;
 	PlayerControl pc;
 	CameraControls cc;
-	[SerializeField] GameObject text;
+	GameObject text;
 	public string reason;
 	GameObject theReason;
 
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindWithTag ("Player");
-		pc = (PlayerControl)player.GetComponent ("PlayerControl");
+        mainCamera = (Camera)GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
+		pc = (PlayerControl)player.GetComponent<PlayerControl>();
 		cc = (CameraControls)mainCamera.GetComponent("CameraControls");
+        text = GameObject.FindGameObjectWithTag("GameOver");
 		theReason =  new GameObject();
 		theReason.AddComponent<TextMesh>();
 		TextMesh tm = theReason.GetComponent<TextMesh>();
@@ -38,5 +40,10 @@ public class Main : MonoBehaviour {
 			tm.text = reason;
 
 		}
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Application.LoadLevel(Application.loadedLevel);
+        }
 	}
 }

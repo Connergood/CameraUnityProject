@@ -8,6 +8,7 @@ TagManager:
   - PressurePad
   - Wall
   - Weight
+  - GameOver
   layers:
   - Default
   - TransparentFX
