@@ -4,9 +4,9 @@ using System.Collections;
 public class mCamFollow : MonoBehaviour {
 
 	[SerializeField] GameObject self;
-	[SerializeField] Camera camera;
-	[SerializeField] Vector3 initialPos;
-	[SerializeField] GameObject player;
+    public float speed = 25.0f;
+	Camera camera;
+	GameObject player;
 
 	public enum State
 	{
@@ -17,8 +17,8 @@ public class mCamFollow : MonoBehaviour {
 
 	void Start(){
 		state = State.offCamera;
-		self.transform.position = initialPos;
 		player = GameObject.FindWithTag("Player");
+        camera = (Camera)GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
 	}
 	
 	// Update is called once per frame
@@ -26,8 +26,11 @@ public class mCamFollow : MonoBehaviour {
 		if (state == State.onCamera)
 		{
 			Vector2 d = vToCamera();
-			this.transform.position = new Vector3(this.transform.position.x + d.x, this.transform.position.y + d.y, this.transform.position.z);
-		}
+			this.GetComponent<Rigidbody>().velocity = new Vector3(speed * d.x, speed * d.y);
+		} else
+        {
+            this.GetComponent<Rigidbody>().velocity = new Vector3(0, 0);
+        }
 		cameraCheck();
 	}
 	

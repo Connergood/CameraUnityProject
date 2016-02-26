@@ -31,13 +31,21 @@ public class Main : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (pc.alive == false) {
+            
 			pc.canMoveLeft = false;
 			pc.canMoveRight = false;
 			cc.active = false;
-			text.transform.position = new Vector3(mainCamera.transform.position.x, mainCamera.transform.position.y + 1, 15.0f);
+			text.transform.position = new Vector3(mainCamera.transform.position.x, mainCamera.transform.position.y + 1, -2.0f);
 			theReason.transform.position = new Vector3(text.transform.position.x, text.transform.position.y - 2, text.transform.position.z);
 			TextMesh tm = theReason.GetComponent<TextMesh>();
-			tm.text = reason;
+            tm.text = reason + System.Environment.NewLine + "Press 'R' To Restart";
+            tm.color = Color.red;
+            GameObject bg = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            bg.transform.position = new Vector3(text.transform.position.x, text.transform.position.y - 1, -1.0f);
+            bg.transform.localScale = new Vector3(9, 9);
+            bg.GetComponent<Renderer>().material.color = Color.black;
+
+
 
 		}
 
