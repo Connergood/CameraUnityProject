@@ -26,10 +26,10 @@ public class mCamFollow : MonoBehaviour {
 		if (state == State.onCamera)
 		{
 			Vector2 d = vToCamera();
-			this.GetComponent<Rigidbody>().velocity = new Vector3(speed * d.x, speed * d.y);
+			this.GetComponent<Rigidbody2D>().velocity = new Vector3(speed * d.x, speed * d.y);
 		} else
         {
-            this.GetComponent<Rigidbody>().velocity = new Vector3(0, 0);
+            this.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0);
         }
 		cameraCheck();
 	}
@@ -55,7 +55,7 @@ public class mCamFollow : MonoBehaviour {
 		}
 	}
 	
-	void OnCollisionEnter(Collision collision)
+	void OnCollisionEnter2D(Collision2D collision)
 	{
 		if (collision.transform.tag == "Player")//((self.transform.position.x - player.transform.position.x) <=1 && (self.transform.position.y - player.transform.position.y) <= 1)
 		{

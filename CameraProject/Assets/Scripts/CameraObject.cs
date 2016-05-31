@@ -7,6 +7,8 @@ public class CameraObject : MonoBehaviour {
 	[SerializeField] GameObject self;
 	GameObject controller;
 
+    BoxCollider2D boxCollider;
+
 	//Limit X and Y coordinates to a box so they can't just pull objects to anywhere They'd like
 	[SerializeField] float limitXLeft;
 	[SerializeField] float limitXRight;
@@ -14,8 +16,8 @@ public class CameraObject : MonoBehaviour {
 	[SerializeField] float limitYDown;
     [SerializeField] bool interactWhileLocked;
 
-	//Hold onto initial location of object so we can calculate if it's out of its box
-	Vector3 initialLocation;
+    //Hold onto initial location of object so we can calculate if it's out of its box
+    Vector2 initialLocation;
 
 	//Holds onto where the object is on the screen
 	Vector2 difference;
@@ -26,6 +28,8 @@ public class CameraObject : MonoBehaviour {
 		locked
 	}
 	public State state;
+
+    MeshRenderer Mesh;
 
 	// Use this for initialization
 	void Start () {
@@ -44,7 +48,11 @@ public class CameraObject : MonoBehaviour {
 		limitXRight = Mathf.Abs (limitXRight);
 		limitYUp = Mathf.Abs (limitYUp);
 		limitYDown = -Mathf.Abs (limitYDown);
-	}
+
+        Mesh = self.GetComponent<MeshRenderer>();
+        boxCollider = self.GetComponent<BoxCollider2D>();
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -61,52 +69,36 @@ public class CameraObject : MonoBehaviour {
 		//if we are locked move the object based on camera movement
 		if (state == State.locked) {
             // The z is 0.0f so that the player is not affected by the block's movement
+            //Perhaps turn off collider and mesh or make it appear transparent as to make it more obvious for the player
             if (interactWhileLocked)
             {
-                self.transform.position = new Vector3(controller.transform.position.x + difference.x, controller.transform.position.y + difference.y, 0.0f);
+                self.transform.position = new Vector3(controller.transform.position.x + difference.x, controller.transform.position.y + difference.y,0.00f);
             } else
             {
-                self.transform.position = new Vector3(controller.transform.position.x + difference.x, controller.transform.position.y + difference.y, 1.0f);
+                Mesh.enabled = false;
+                boxCollider.enabled = false;
+                self.transform.position = new Vector3(controller.transform.position.x + difference.x, controller.transform.position.y + difference.y, 1.00f);
             }
 			//Limit the object to its zone
 			if(initialLocation.x + limitXRight < self.transform.position.x) {
-				self.transform.position = new Vector3(initialLocation.x + limitXRight, self.transform.position.y, self.transform.position.z);
+				self.transform.position = new Vector2(initialLocation.x + limitXRight, self.transform.position.y);
 			}
 			if(initialLocation.x + limitXLeft > self.transform.position.x) {
-				self.transform.position = new Vector3(initialLocation.x + limitXLeft, self.transform.position.y, self.transform.position.z);
+				self.transform.position = new Vector2(initialLocation.x + limitXLeft, self.transform.position.y);
 			}
 			if(initialLocation.y + limitYUp < self.transform.position.y) {
-				self.transform.position = new Vector3(self.transform.position.x, initialLocation.y + limitYUp, self.transform.position.z);
+				self.transform.position = new Vector2(self.transform.position.x, initialLocation.y + limitYUp);
 			}
 			if(initialLocation.y + limitYDown > self.transform.position.y) { 
-				self.transform.position = new Vector3(self.transform.position.x, initialLocation.y + limitYDown, self.transform.position.z);
+				self.transform.position = new Vector2(self.transform.position.x, initialLocation.y + limitYDown);
 			}
 		} else { // if we are not locked move the object back to the plane the player is in and calculate difference
-			self.transform.position = new Vector3 (self.transform.position.x, self.transform.position.y, 0.0f);
+			self.transform.position = new Vector2 (self.transform.position.x, self.transform.position.y);
 			difference = new Vector2 (self.transform.position.x - controller.transform.position.x,
 			                                  self.transform.position.y - controller.transform.position.y);
-		}
-	}
+            Mesh.enabled = true;
+            boxCollider.enabled = true;
 
-	IEnumerator MoveCube(float inTime)
-	{
-		Vector3 from = self.transform.position;
-        Vector3 to = new Vector3(0.0f, 0.0f);
-		if (state == State.locked) {
-            if (interactWhileLocked)
-            {
-                to = new Vector3(self.transform.position.x, self.transform.position.y, 0.0f);
-            } else
-            {
-                to = new Vector3(self.transform.position.x, self.transform.position.y, 0.0f);
-            }
-		} else {
-			to = new Vector3(self.transform.position.x, self.transform.position.y, 0.0f);
-		}
-		for(float t = 0f ; t < 1f ; t += Time.deltaTime/inTime)
-		{
-			self.transform.position = Vector3.Lerp(from, to, t);
-			yield return null ;
-		}
+        }
 	}
 }

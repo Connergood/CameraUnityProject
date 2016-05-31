@@ -9,6 +9,12 @@ TagManager:
   - Wall
   - Weight
   - GameOver
+  - PathMonster
+  - Waypoint
+  - DialogueBox
+  - Speaker
+  - Dialogue
+  - Canvas
   layers:
   - Default
   - TransparentFX

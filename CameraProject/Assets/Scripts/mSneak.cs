@@ -34,10 +34,10 @@ public class mSneak : MonoBehaviour {
 		if (state == State.offCamera && active == true)
 		{
 			Vector2 d = vToPlayer();
-			this.GetComponent<Rigidbody>().velocity = new Vector3(d.x * speed, d.y * speed);
+			this.GetComponent<Rigidbody2D>().velocity = new Vector2(d.x * speed, d.y * speed);
 		} else
         {
-            this.GetComponent<Rigidbody>().velocity = new Vector3(0, 0);
+            this.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         }
 	}
 	
@@ -62,7 +62,7 @@ public class mSneak : MonoBehaviour {
 		}
 	}
 	
-	void OnCollisionEnter(Collision collision)
+	void OnCollisionEnter2D(Collision2D collision)
 	{
 		if (collision.transform.tag == "Player")//((self.transform.position.x - player.transform.position.x) <=1 && (self.transform.position.y - player.transform.position.y) <= 1)
 		{

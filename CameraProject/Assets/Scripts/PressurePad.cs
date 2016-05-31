@@ -71,7 +71,7 @@ public class PressurePad : MonoBehaviour {
         }
 	}
 
-	void OnCollisionEnter(Collision collision){
+	void OnCollisionEnter2D(Collision2D collision){
 		if (collision.transform.tag == "Player" || collision.transform.tag == "Weight"){
 			if (!activated && !isActivatedByCamera){
 				StopAllCoroutines();
@@ -86,7 +86,7 @@ public class PressurePad : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionExit(Collision collision){
+	void OnCollisionExit2D(Collision2D collision){
 		if ((collision.transform.tag == "Player" || collision.transform.tag == "Weight")){
 			if (activated && type == State.weighted){
 				StopAllCoroutines();

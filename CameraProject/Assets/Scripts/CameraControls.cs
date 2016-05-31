@@ -9,7 +9,7 @@ public class CameraControls : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        self.transform.position = new Vector3(self.transform.position.x, self.transform.position.y, -5.0f);
+        self.transform.position = new Vector3(self.transform.position.x, self.transform.position.y, -15.0f);
 	}
 	
 	// Update is called once per frame

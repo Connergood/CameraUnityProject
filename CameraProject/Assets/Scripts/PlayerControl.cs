@@ -5,8 +5,7 @@ public class PlayerControl : MonoBehaviour {
 	
 	[SerializeField] GameObject self;
 	[SerializeField] float minY;
-	Rigidbody rigidBody;
-	ArrayList fallZones;
+	Rigidbody2D rigidBody;
 	
 	public bool alive = true;
 	
@@ -21,11 +20,10 @@ public class PlayerControl : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-        rigidBody = self.GetComponent<Rigidbody>();
+        rigidBody = self.GetComponent<Rigidbody2D>();
 		canMoveLeft = true;
 		canMoveRight = true;
 		alive = true;
-		//fallZones.Add(self.transform.child
 	}
 	
 	// Update is called once per frame
@@ -45,7 +43,7 @@ public class PlayerControl : MonoBehaviour {
 			}
 			if (Input.GetKeyDown ("up") && state == State.normal) {
 				state = State.jumping;
-				rigidBody.AddForce (Vector3.up * 450.0f);
+                rigidBody.velocity = new Vector2(rigidBody.velocity.x, 35.0f);
 			}
 		}
         if (alive == false)
@@ -54,7 +52,7 @@ public class PlayerControl : MonoBehaviour {
         }
 	}
 	
-	void OnCollisionEnter(Collision collision){
+	void OnCollisionEnter2D(Collision2D collision){
 		if (collision.transform.tag == "Wall") {
 			if (collision.transform.position.x < self.transform.position.x - self.transform.localScale.x) {
 				canMoveLeft = false;
@@ -68,7 +66,7 @@ public class PlayerControl : MonoBehaviour {
 		}
 	}
 	
-	void OnCollisionExit(Collision collision){
+	void OnCollisionExit2D(Collision2D collision){
 		if (collision.transform.tag == "Wall"){
 			if (collision.transform.position.x - 1 < self.transform.position.x - self.transform.localScale.x){
 				canMoveLeft = true;
