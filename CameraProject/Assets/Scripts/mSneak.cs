@@ -31,7 +31,7 @@ public class mSneak : MonoBehaviour {
 		{
 			active = true;
 		}
-		if (state == State.offCamera && active == true)
+		if (state == State.offCamera && active == true && !player.GetComponent<PlayerControl>().playerHidden)
 		{
 			Vector2 d = vToPlayer();
 			this.GetComponent<Rigidbody2D>().velocity = new Vector2(d.x * speed, d.y * speed);

@@ -48,6 +48,7 @@ public class Dialogue : MonoBehaviour {
             GameObject.FindGameObjectWithTag("Canvas").transform.position = new Vector2(50, 50);
             letterIndex = 0;
             textToDisplay = "";
+            
         } else
         {
             GameObject.FindGameObjectWithTag("Canvas").transform.position = GameObject.FindGameObjectWithTag("MainCamera").transform.position;
@@ -73,6 +74,7 @@ public class Dialogue : MonoBehaviour {
             letterIndex = 0;
             textToDisplay = "";
             active = false;
+            GameObject.Find("Main").GetComponent<Main>().lockThingsInPlace(false);
         }
     }
 }

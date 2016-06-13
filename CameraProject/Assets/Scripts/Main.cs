@@ -44,9 +44,6 @@ public class Main : MonoBehaviour {
             bg.transform.position = new Vector3(text.transform.position.x, text.transform.position.y - 1, -1.0f);
             bg.transform.localScale = new Vector3(9, 9);
             bg.GetComponent<Renderer>().material.color = Color.black;
-
-
-
 		}
 
         if (Input.GetKeyDown(KeyCode.R))
@@ -54,4 +51,11 @@ public class Main : MonoBehaviour {
             Application.LoadLevel(Application.loadedLevel);
         }
 	}
+
+    public void lockThingsInPlace(bool locked)
+    {
+        pc.canMoveLeft = !locked;
+        pc.canMoveRight = !locked;
+        cc.active = !locked;
+    }
 }

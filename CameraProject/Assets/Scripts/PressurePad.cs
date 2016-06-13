@@ -79,10 +79,9 @@ public class PressurePad : MonoBehaviour {
 				StartCoroutine(RotateCube(new Vector3(0.0f, 0.0f, 1.0f) * rotate, 2.0f)) ;
 				activated = true;
 				StartCoroutine(Wait ());
-				MeshRenderer mr = self.GetComponent<MeshRenderer>();
-				Material m = mr.material;
-				m.color = Color.red;
-			}
+				SpriteRenderer sr = self.GetComponentInChildren<SpriteRenderer>();
+                sr.color = new Color(255, 0, 0);
+            }
 		}
 	}
 
@@ -93,10 +92,9 @@ public class PressurePad : MonoBehaviour {
 				StartCoroutine(MoveCubeFrom(3.0f));
 				StartCoroutine(RotateCube(new Vector3(0.0f, 0.0f, 1.0f) * -rotate, 2.0f)) ;
 				activated = false;
-				MeshRenderer mr = self.GetComponent<MeshRenderer>();
-				Material m = mr.material;
-				m.color = Color.green;
-				StartCoroutine(Wait ());
+                SpriteRenderer sr = self.GetComponentInChildren<SpriteRenderer>();
+                sr.color = new Color(255, 255, 255);
+                StartCoroutine(Wait ());
 			}
 		}
 	}

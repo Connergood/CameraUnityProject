@@ -55,6 +55,9 @@ public class mPathFollow : MonoBehaviour {
             }
         } else if (state == State.chasePlayer)
         {
+            if (player.GetComponent<PlayerControl>().playerHidden) {
+                state = State.wait;
+            }
             if ((target.transform.position - player.transform.position).magnitude > playerDist)
             {
                 state = State.wait;
@@ -63,7 +66,7 @@ public class mPathFollow : MonoBehaviour {
             this.GetComponent<Rigidbody2D>().velocity = new Vector2(d.x * playerChaseSpeed, d.y * playerChaseSpeed);
         }
 
-        if((target.transform.position - player.transform.position).magnitude <= playerDist)
+        if((target.transform.position - player.transform.position).magnitude <= playerDist && !player.GetComponent<PlayerControl>().playerHidden)
         {
             state = State.chasePlayer;
         }

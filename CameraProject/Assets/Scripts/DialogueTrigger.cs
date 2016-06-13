@@ -8,6 +8,7 @@ public class DialogueTrigger : MonoBehaviour
     public bool activated;
     public List<string> dialogue;
     GameObject player;
+    public bool lockPlayer = true;
 
     // Use this for initialization
     void Start()
@@ -25,6 +26,7 @@ public class DialogueTrigger : MonoBehaviour
             {
                 this.activated = true;
                 DialogueCanvas.GetComponent<Dialogue>().ActivateDialogue(dialogue);
+                GameObject.Find("Main").GetComponent<Main>().lockThingsInPlace(lockPlayer);
             }
 
         }

@@ -29,15 +29,11 @@ public class CameraObject : MonoBehaviour {
 	}
 	public State state;
 
-    MeshRenderer Mesh;
+    SpriteRenderer Mesh;
 
 	// Use this for initialization
 	void Start () {
         controller = GameObject.FindGameObjectWithTag("MainCamera");
-
-		//Get the renderer so we can make the objects blue
-		Renderer rend = GetComponent<Renderer>();
-		rend.material.color = Color.blue;
 		//initialize vectors and state
 		difference = new Vector2 (0, 0);
 		state = State.still;
@@ -49,7 +45,7 @@ public class CameraObject : MonoBehaviour {
 		limitYUp = Mathf.Abs (limitYUp);
 		limitYDown = -Mathf.Abs (limitYDown);
 
-        Mesh = self.GetComponent<MeshRenderer>();
+        Mesh = self.GetComponentInChildren<SpriteRenderer>();
         boxCollider = self.GetComponent<BoxCollider2D>();
 
     }

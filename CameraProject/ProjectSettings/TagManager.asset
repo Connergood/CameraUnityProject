@@ -15,6 +15,7 @@ TagManager:
   - Speaker
   - Dialogue
   - Canvas
+  - Ladder
   layers:
   - Default
   - TransparentFX
