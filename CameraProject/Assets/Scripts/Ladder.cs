@@ -14,7 +14,7 @@ public class Ladder : MonoBehaviour {
 	void Update () {
         if (Mathf.Abs(Player.transform.position.x - transform.position.x) < .5f && Mathf.Abs(Player.transform.position.y - transform.position.y) < transform.localScale.y/2)
         {
-            if(Input.GetKeyDown("up") || Input.GetKeyDown("down"))
+            if(Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.Q))
             {
                 Player.GetComponent<PlayerControl>().onLadder = true;
             }

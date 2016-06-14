@@ -11,6 +11,9 @@ public class PressurePad : MonoBehaviour {
 	[SerializeField] float translateY;
 	[SerializeField] float rotate;
 
+    [SerializeField] bool isActionItemSwitch = false;
+    [SerializeField] float distanceFromSwitch = 1.5f;
+
     GameObject camera;
 
 	Vector3 to;
@@ -69,10 +72,34 @@ public class PressurePad : MonoBehaviour {
                 StartCoroutine(Wait());
             }
         }
+        if (isActionItemSwitch && !activated)
+        {
+            if (Input.GetKeyDown(KeyCode.Q) &&
+                !GameObject.Find("Player").GetComponent<PlayerControl>().playerHidden &&
+                Mathf.Abs(transform.position.x - transform.position.x) < distanceFromSwitch + transform.localScale.x / 2 &&
+                Mathf.Abs(transform.position.y - transform.position.y) < distanceFromSwitch + transform.localScale.y / 2)
+            {
+                StopAllCoroutines();
+                StartCoroutine(MoveCubeTo(2.0f));
+                StartCoroutine(RotateCube(new Vector3(0.0f, 0.0f, 1.0f) * rotate, 2.0f));
+                activated = true;
+                StartCoroutine(Wait());
+                SpriteRenderer sr = self.GetComponentInChildren<SpriteRenderer>();
+                sr.color = new Color(255, 0, 0);
+            }
+        } else if (isActionItemSwitch && type == State.weighted && activated && Input.GetKeyUp(KeyCode.Q)) {
+            StopAllCoroutines();
+            StartCoroutine(MoveCubeFrom(3.0f));
+            StartCoroutine(RotateCube(new Vector3(0.0f, 0.0f, 1.0f) * -rotate, 2.0f));
+            activated = false;
+            SpriteRenderer sr = self.GetComponentInChildren<SpriteRenderer>();
+            sr.color = new Color(255, 255, 255);
+            StartCoroutine(Wait());
+        }
 	}
 
 	void OnCollisionEnter2D(Collision2D collision){
-		if (collision.transform.tag == "Player" || collision.transform.tag == "Weight"){
+		if ((collision.transform.tag == "Player" || collision.transform.tag == "Weight") && !isActionItemSwitch){
 			if (!activated && !isActivatedByCamera){
 				StopAllCoroutines();
 				StartCoroutine(MoveCubeTo(2.0f));
@@ -86,7 +113,8 @@ public class PressurePad : MonoBehaviour {
 	}
 
 	void OnCollisionExit2D(Collision2D collision){
-		if ((collision.transform.tag == "Player" || collision.transform.tag == "Weight")){
+		if ((collision.transform.tag == "Player" || collision.transform.tag == "Weight") && !isActionItemSwitch)
+        {
 			if (activated && type == State.weighted){
 				StopAllCoroutines();
 				StartCoroutine(MoveCubeFrom(3.0f));

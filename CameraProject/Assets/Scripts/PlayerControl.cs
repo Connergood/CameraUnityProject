@@ -10,21 +10,11 @@ public class PlayerControl : MonoBehaviour {
     public bool alive = true;
     public bool onLadder = false;
     public bool playerHidden = false;
-	
-	public enum State{
-		normal,
-		jumping
-	}
-	public State state;
-	
-	public bool canMoveLeft;
-	public bool canMoveRight;
-	
+
+    Vector3 lockedPos;
 	// Use this for initialization
 	void Start () {
         rigidBody = self.GetComponent<Rigidbody2D>();
-		canMoveLeft = true;
-		canMoveRight = true;
 		alive = true;
 	}
 	
@@ -43,20 +33,12 @@ public class PlayerControl : MonoBehaviour {
                         m.reason = "The Player Fell Off The Map";
                         return;
                     }
-                    if (Input.GetKey("left") && canMoveLeft)
+                    if (Input.GetKey("left"))
                     {
-                        self.transform.position += new Vector3(-0.1f, 0.0f, 0.0f);
                         self.GetComponent<SpriteRenderer>().flipX = true;
-                    }
-                    if (Input.GetKey("right") && canMoveRight)
+                    } else if (Input.GetKey("right"))
                     {
-                        self.transform.position += new Vector3(0.1f, 0.0f, 0.0f);
                         self.GetComponent<SpriteRenderer>().flipX = false;
-                    }
-                    if (Input.GetKeyDown("up") && state == State.normal)
-                    {
-                        state = State.jumping;
-                        rigidBody.velocity = new Vector2(rigidBody.velocity.x, 35.0f);
                     }
                 }
                 else
@@ -75,20 +57,19 @@ public class PlayerControl : MonoBehaviour {
                         self.transform.position += new Vector3(0.0f, -0.1f, 0.0f);
                     }
                 }
+                lockedPos = transform.position;
             } else
             {
                 rigidBody.isKinematic = true;
-                if (Input.GetKeyUp("down"))
+                transform.position = lockedPos;
+                if (Input.GetKeyUp(KeyCode.Q))
                 {
                     playerHidden = false;
                 }
             }
 		}
-        if (alive == false)
-        {
-
-        }
 	}
+
 
     public void HidePlayer(string ObjName, Vector2 ObjPos)
     {
@@ -105,28 +86,4 @@ public class PlayerControl : MonoBehaviour {
         }
         transform.position = ObjPos;
     }
-
-    void OnCollisionEnter2D(Collision2D collision){
-		if (collision.transform.tag == "Wall") {
-			if (collision.transform.position.x < self.transform.position.x - self.transform.localScale.x) {
-				canMoveLeft = false;
-			} else if (collision.transform.position.x > self.transform.position.x + self.transform.localScale.x) {
-				canMoveRight = false;
-			}
-		}
-		
-		if ((collision.transform.tag == "Ground" || collision.transform.tag == "PressurePad" || collision.transform.tag == "Weight") && state == State.jumping){
-			state = State.normal;
-		}
-	}
-	
-	void OnCollisionExit2D(Collision2D collision){
-		if (collision.transform.tag == "Wall"){
-			if (collision.transform.position.x - 1 < self.transform.position.x - self.transform.localScale.x){
-				canMoveLeft = true;
-			} else if (collision.transform.position.x + 1 > self.transform.position.x + self.transform.localScale.x){
-				canMoveRight = true;
-			}
-		}
-	}
 }
