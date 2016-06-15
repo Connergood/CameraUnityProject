@@ -10,6 +10,8 @@ public class Grid : MonoBehaviour {
 
     public Transform tilePrefab;
 
+    public TileSet[] setOfTiles;
+
     public TileSet tileSet;
 
     public bool draggable;

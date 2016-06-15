@@ -33,13 +33,6 @@ public class PlayerControl : MonoBehaviour {
                         m.reason = "The Player Fell Off The Map";
                         return;
                     }
-                    if (Input.GetKey("left"))
-                    {
-                        self.GetComponent<SpriteRenderer>().flipX = true;
-                    } else if (Input.GetKey("right"))
-                    {
-                        self.GetComponent<SpriteRenderer>().flipX = false;
-                    }
                 }
                 else
                 {
