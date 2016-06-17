@@ -34,7 +34,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &126924
 GameObject:
   m_ObjectHideFlags: 1
@@ -101,7 +101,7 @@ GameObject:
   - 124: {fileID: 12412082}
   - 81: {fileID: 8138030}
   - 114: {fileID: 11421788}
-  - 114: {fileID: 11433314}
+  - 50: {fileID: 5046168}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -177,7 +177,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 152188}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 251, y: 164.14246, z: 477.2158}
+  m_LocalPosition: {x: 251, y: 164.14246, z: 11}
   m_LocalScale: {x: 59.651974, y: 59.651974, z: 59.651974}
   m_Children: []
   m_Father: {fileID: 22403214}
@@ -201,7 +201,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 136466}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.9, y: 0.7, z: -14.52}
+  m_LocalPosition: {x: 3.73, y: -0.1, z: -14.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 22486772}
@@ -226,7 +226,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 187416}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -252.4, y: 164.14246, z: 477.2158}
+  m_LocalPosition: {x: -252.4, y: 164.14246, z: 11}
   m_LocalScale: {x: 59.651974, y: 59.651974, z: 59.651974}
   m_Children: []
   m_Father: {fileID: 22403214}
@@ -355,6 +355,23 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!50 &5046168
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 136466}
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!81 &8138030
 AudioListener:
   m_ObjectHideFlags: 1
@@ -459,6 +476,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   self: {fileID: 136466}
   active: 1
+  speed: 6
 --- !u!114 &11424162
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -477,32 +495,6 @@ MonoBehaviour:
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
   m_ForceModuleActive: 1
---- !u!114 &11433314
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 136466}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9191284b058eef549b7108b5f04e1117, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  intensityMultiplier: 0.25
-  generalIntensity: 0.5
-  blackIntensity: 1
-  whiteIntensity: 1
-  midGrey: 0.2
-  dx11Grain: 0
-  softness: 0
-  monochrome: 0
-  intensities: {x: 1, y: 1, z: 1}
-  tiling: {x: 64, y: 64, z: 64}
-  monochromeTiling: 64
-  filterMode: 1
-  noiseTexture: {fileID: 2800000, guid: 7a632f967e8ad42f5bd275898151ab6a, type: 3}
-  noiseShader: {fileID: 4800000, guid: b0249d8c935344451aa4de6db76f0688, type: 3}
-  dx11NoiseShader: {fileID: 4800000, guid: 8b30686bb4322ab42ad5eb50a0210b58, type: 3}
 --- !u!114 &11453178
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10515,7 +10507,7 @@ MonoBehaviour:
   - 
   - 
   - 
-  textDelay: 0.05
+  textDelay: 0.025
 --- !u!114 &11453908
 MonoBehaviour:
   m_ObjectHideFlags: 1

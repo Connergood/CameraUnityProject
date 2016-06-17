@@ -16,7 +16,7 @@ public class HiddenPlace : MonoBehaviour {
         Vector2 myPos = transform.position;
         if((playerPos - myPos).magnitude < .75f)
         {
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetButton("Action"))
             {
                 Player.GetComponent<PlayerControl>().HidePlayer(gameObject.name, myPos);
             }

@@ -26,7 +26,7 @@ public class GrabAbleObject : MonoBehaviour {
     {
         if (isGrabbable)
         {
-            if (Input.GetKeyDown(KeyCode.Q) &&
+            if (Input.GetButton("Action") &&
                 !Player.GetComponent<PlayerControl>().playerHidden &&
                 Mathf.Abs(difference.x) < 1 + transform.localScale.x/2 &&
                 Mathf.Abs(difference.y) < 1 + transform.localScale.y/2)
@@ -34,7 +34,7 @@ public class GrabAbleObject : MonoBehaviour {
                 state = State.locked;
                 print("I am locked");
             }
-            else if (Input.GetKeyUp(KeyCode.Q))
+            else if (!Input.GetButton("Action"))
             {
                 state = State.unlocked;
             }

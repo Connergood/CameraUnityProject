@@ -53,13 +53,13 @@ public class CameraObject : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//Upon press of space lock all objects on screen to camera
-		if (Input.GetKeyDown ("space") && 
+		if (Input.GetButton("Action Camera") && 
 		    (difference.x < 10.0f && difference.x > -10.0f) && 
 		    (difference.y < 6.0f && difference.y > -6.0f)) {
 			state = State.locked;
 		}
 		//Upon release of space release all objects locked to camera
-		if (Input.GetKeyUp ("space")){
+		else if (!Input.GetButton ("Action Camera")){
 			state = State.still;
 		}
 		//if we are locked move the object based on camera movement

@@ -50,12 +50,11 @@ public class PlayerControl : MonoBehaviour {
                         self.transform.position += new Vector3(0.0f, -0.1f, 0.0f);
                     }
                 }
-                lockedPos = transform.position;
             } else
             {
                 rigidBody.isKinematic = true;
                 transform.position = lockedPos;
-                if (Input.GetKeyUp(KeyCode.Q))
+                if (!Input.GetButton("Action"))
                 {
                     playerHidden = false;
                 }
@@ -77,6 +76,6 @@ public class PlayerControl : MonoBehaviour {
             case "Cart":
                 break;
         }
-        transform.position = ObjPos;
+       lockedPos = ObjPos;
     }
 }

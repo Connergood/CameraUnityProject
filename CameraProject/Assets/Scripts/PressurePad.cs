@@ -74,7 +74,7 @@ public class PressurePad : MonoBehaviour {
         }
         if (isActionItemSwitch && !activated)
         {
-            if (Input.GetKeyDown(KeyCode.Q) &&
+            if (Input.GetButton("Action") &&
                 !GameObject.Find("Player").GetComponent<PlayerControl>().playerHidden &&
                 Mathf.Abs(transform.position.x - transform.position.x) < distanceFromSwitch + transform.localScale.x / 2 &&
                 Mathf.Abs(transform.position.y - transform.position.y) < distanceFromSwitch + transform.localScale.y / 2)
@@ -87,7 +87,7 @@ public class PressurePad : MonoBehaviour {
                 SpriteRenderer sr = self.GetComponentInChildren<SpriteRenderer>();
                 sr.color = new Color(255, 0, 0);
             }
-        } else if (isActionItemSwitch && type == State.weighted && activated && Input.GetKeyUp(KeyCode.Q)) {
+        } else if (isActionItemSwitch && type == State.weighted && activated && !Input.GetButton("Action")) {
             StopAllCoroutines();
             StartCoroutine(MoveCubeFrom(3.0f));
             StartCoroutine(RotateCube(new Vector3(0.0f, 0.0f, 1.0f) * -rotate, 2.0f));
