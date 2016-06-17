@@ -18,9 +18,6 @@ public class Ladder : MonoBehaviour {
             {
                 Player.GetComponent<PlayerControl>().onLadder = true;
             }
-        } else
-        {
-            Player.GetComponent<PlayerControl>().onLadder = false;
         }
 	}
 }
