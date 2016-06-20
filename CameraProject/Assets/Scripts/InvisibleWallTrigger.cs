@@ -7,6 +7,7 @@ public class InvisibleWallTrigger : MonoBehaviour {
     [SerializeField] GameObject[] wallsToRemove;
     bool activateWalls = false;
     public bool removeWalls = false;
+    public bool thisTriggerRemovesWalls = false;
     GameObject Player;
 
 	// Use this for initialization
@@ -44,11 +45,27 @@ public class InvisibleWallTrigger : MonoBehaviour {
                     wallsToRemove[i].GetComponent<BoxCollider2D>().isTrigger = true;
                 }
             }
+        } else
+        {
+            for (int i = 0; i < wallsToRemove.Length; i++)
+            {
+                if (wallsToRemove[i] != null)
+                {
+                    wallsToRemove[i].GetComponent<BoxCollider2D>().isTrigger = false;
+                }
+            }
         }
 
         if((Player.transform.position - transform.position).magnitude < 1)
         {
-            activateWalls = true;
+            if (thisTriggerRemovesWalls)
+            {
+                removeWalls = true;
+            } else
+            {
+                activateWalls = true;
+            }
+           
         }
 
     }

@@ -14,6 +14,8 @@ public class PressurePad : MonoBehaviour {
     [SerializeField] bool isActionItemSwitch = false;
     [SerializeField] float distanceFromSwitch = 1.5f;
 
+    [SerializeField] float speedOfTransition = 3.0f;
+
     GameObject camera;
 
 	Vector3 to;
@@ -64,7 +66,7 @@ public class PressurePad : MonoBehaviour {
             {
                 activated = false;
                 StopAllCoroutines();
-                StartCoroutine(MoveCubeFrom(3.0f));
+                StartCoroutine(MoveCubeFrom(speedOfTransition));
                 StartCoroutine(RotateCube(new Vector3(0.0f, 0.0f, 1.0f) * -rotate, 2.0f));
                 MeshRenderer mr = self.GetComponent<MeshRenderer>();
                 Material m = mr.material;
@@ -76,8 +78,8 @@ public class PressurePad : MonoBehaviour {
         {
             if (Input.GetButton("Action") &&
                 !GameObject.Find("Player").GetComponent<PlayerControl>().playerHidden &&
-                Mathf.Abs(transform.position.x - transform.position.x) < distanceFromSwitch + transform.localScale.x / 2 &&
-                Mathf.Abs(transform.position.y - transform.position.y) < distanceFromSwitch + transform.localScale.y / 2)
+                Mathf.Abs(GameObject.Find("Player").transform.position.x - transform.position.x) < distanceFromSwitch + transform.localScale.x / 2 &&
+                Mathf.Abs(GameObject.Find("Player").transform.position.y - transform.position.y) < distanceFromSwitch + transform.localScale.y / 2)
             {
                 StopAllCoroutines();
                 StartCoroutine(MoveCubeTo(2.0f));
@@ -89,7 +91,7 @@ public class PressurePad : MonoBehaviour {
             }
         } else if (isActionItemSwitch && type == State.weighted && activated && !Input.GetButton("Action")) {
             StopAllCoroutines();
-            StartCoroutine(MoveCubeFrom(3.0f));
+            StartCoroutine(MoveCubeFrom(speedOfTransition));
             StartCoroutine(RotateCube(new Vector3(0.0f, 0.0f, 1.0f) * -rotate, 2.0f));
             activated = false;
             SpriteRenderer sr = self.GetComponentInChildren<SpriteRenderer>();
@@ -117,7 +119,7 @@ public class PressurePad : MonoBehaviour {
         {
 			if (activated && type == State.weighted){
 				StopAllCoroutines();
-				StartCoroutine(MoveCubeFrom(3.0f));
+				StartCoroutine(MoveCubeFrom(speedOfTransition));
 				StartCoroutine(RotateCube(new Vector3(0.0f, 0.0f, 1.0f) * -rotate, 2.0f)) ;
 				activated = false;
                 SpriteRenderer sr = self.GetComponentInChildren<SpriteRenderer>();
