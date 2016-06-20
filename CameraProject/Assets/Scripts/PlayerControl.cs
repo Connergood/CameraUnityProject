@@ -1,26 +1,32 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerControl : MonoBehaviour {
-	
-	[SerializeField] GameObject self;
-	[SerializeField] float minY;
-	Rigidbody2D rigidBody;
+public class PlayerControl : MonoBehaviour
+{
+
+    [SerializeField]
+    GameObject self;
+    [SerializeField]
+    float minY;
+    Rigidbody2D rigidBody;
 
     public bool alive = true;
     public bool onLadder = false;
     public bool playerHidden = false;
 
     Vector3 lockedPos;
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         rigidBody = self.GetComponent<Rigidbody2D>();
-		alive = true;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		if (alive) {
+        alive = true;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (alive)
+        {
             if (!playerHidden)
             {
                 if (!onLadder)
@@ -50,7 +56,8 @@ public class PlayerControl : MonoBehaviour {
                         self.transform.position += new Vector3(0.0f, -0.1f, 0.0f);
                     }
                 }
-            } else
+            }
+            else
             {
                 rigidBody.isKinematic = true;
                 transform.position = lockedPos;
@@ -59,8 +66,8 @@ public class PlayerControl : MonoBehaviour {
                     playerHidden = false;
                 }
             }
-		}
-	}
+        }
+    }
 
 
     public void HidePlayer(string ObjName, Vector2 ObjPos)
@@ -76,6 +83,23 @@ public class PlayerControl : MonoBehaviour {
             case "Cart":
                 break;
         }
-       lockedPos = ObjPos;
+        lockedPos = ObjPos;
+    }
+    void OnCollisionStay2D(Collision2D hit)
+    {
+        if (hit.gameObject.tag == "Platform")
+        {
+            self.transform.parent = hit.transform;
+        }
+        else {
+            self.transform.parent = null;
+        }
+    }
+    void OnCollisionExit2D(Collision2D hit)
+    {
+        if (hit.gameObject.tag == "Platform")
+        {
+            self.transform.parent = null;
+        }
     }
 }

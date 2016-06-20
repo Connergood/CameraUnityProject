@@ -32,7 +32,7 @@ GameObject:
   - 61: {fileID: 6101866}
   m_Layer: 0
   m_Name: MovingPlatform
-  m_TagString: Ground
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,7 +44,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 193332}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 14.705526, y: -1.7313089, z: 0}
   m_LocalScale: {x: 4, y: 1, z: 1}
   m_Children:
   - {fileID: 496876}
@@ -148,7 +148,7 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 192040}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -168,12 +168,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  startingX: 0
+  startingX: 14
   targetX: 1
-  directionX: 0
-  startingY: 0
+  directionX: 1
+  startingY: -1.5
   targetY: 1
-  directionY: 0
+  directionY: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

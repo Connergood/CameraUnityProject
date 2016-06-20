@@ -16,6 +16,7 @@ TagManager:
   - Dialogue
   - Canvas
   - Ladder
+  - Platform
   layers:
   - Default
   - TransparentFX
