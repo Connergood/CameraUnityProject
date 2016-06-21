@@ -28,15 +28,18 @@ public class GrabAbleObject : MonoBehaviour {
         {
             if (Input.GetButton("Action") &&
                 !Player.GetComponent<PlayerControl>().playerHidden &&
-                Mathf.Abs(difference.x) < 1 + transform.localScale.x/2 &&
-                Mathf.Abs(difference.y) < 1 + transform.localScale.y/2)
+                Mathf.Abs(difference.x) < 1 + transform.localScale.x / 2 &&
+                Mathf.Abs(difference.y) < 1 + transform.localScale.y / 2 &&
+                !GameObject.Find("Main").GetComponent<Main>().GetGrabbable())
             {
                 state = State.locked;
                 print("I am locked");
+                GameObject.Find("Main").GetComponent<Main>().setGrabbable(true);
             }
             else if (!Input.GetButton("Action"))
             {
                 state = State.unlocked;
+                GameObject.Find("Main").GetComponent<Main>().setGrabbable(false);
             }
 
             if (state == State.locked)

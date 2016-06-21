@@ -10,6 +10,7 @@ public class Main : MonoBehaviour {
 	GameObject text;
 	public string reason;
 	GameObject theReason;
+    public bool thereIsAGrabbedObject = false;
 
 	// Use this for initialization
 	void Start () {
@@ -48,6 +49,16 @@ public class Main : MonoBehaviour {
             Application.LoadLevel(Application.loadedLevel);
         }
 	}
+
+    public void setGrabbable(bool b)
+    {
+        thereIsAGrabbedObject = b;
+    }
+
+    public bool GetGrabbable()
+    {
+        return thereIsAGrabbedObject;
+    }
 
     public void lockThingsInPlace(bool locked)
     {
