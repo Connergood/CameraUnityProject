@@ -11,7 +11,7 @@ GameObject:
   - 33: {fileID: 3392930}
   - 23: {fileID: 2320120}
   - 61: {fileID: 6152452}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: WallOfPlatformToPreventWallJumping
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -30,7 +30,7 @@ GameObject:
   - 23: {fileID: 2397770}
   - 114: {fileID: 11491356}
   - 61: {fileID: 6101866}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MovingPlatform
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -168,10 +168,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  startingX: 14
   targetX: 1
   directionX: 1
-  startingY: -1.5
   targetY: 1
   directionY: 1
 --- !u!1001 &100100000
@@ -180,7 +178,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 193332}
