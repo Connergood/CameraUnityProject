@@ -95,6 +95,15 @@ namespace UnityStandardAssets._2D
                 m_Anim.SetBool("Ground", false);
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
             }
+            
+            //Ignore platform collision if player is jumping
+            if(!m_Grounded && m_Rigidbody2D.velocity.y >= 0.0f)
+            {
+                Physics2D.IgnoreLayerCollision(8, 9, true);
+            } else
+            {
+                Physics2D.IgnoreLayerCollision(8, 9, false);
+            }
         }
 
 

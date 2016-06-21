@@ -12,11 +12,12 @@ public class Ladder : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Mathf.Abs(Player.transform.position.x - transform.position.x) < .5f && Mathf.Abs(Player.transform.position.y - transform.position.y) < transform.localScale.y/2)
+        if (Mathf.Abs(Player.transform.position.x - transform.position.x) < .5f && Mathf.Abs(Player.transform.position.y - transform.position.y) < transform.localScale.y / 2)
         {
-            if(Input.GetButton("Action"))
+            if (Input.GetButton("Action"))
             {
                 Player.GetComponent<PlayerControl>().onLadder = true;
+                Player.GetComponent<PlayerControl>().Ladder = gameObject;
             }
         }
 	}

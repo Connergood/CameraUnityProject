@@ -9,6 +9,7 @@ public class PlayerControl : MonoBehaviour
     [SerializeField]
     float minY;
     Rigidbody2D rigidBody;
+    public GameObject Ladder;
 
     public bool alive = true;
     public bool onLadder = false;
@@ -47,11 +48,11 @@ public class PlayerControl : MonoBehaviour
                     {
                         onLadder = false;
                     }
-                    if (Input.GetKey("up"))
+                    if (Input.GetKey("up") && transform.position.y - Ladder.transform.position.y < Ladder.transform.localScale.y / 2)
                     {
                         self.transform.position += new Vector3(0.0f, 0.1f, 0.0f);
                     }
-                    if (Input.GetKey("down"))
+                    if (Input.GetKey("down") && transform.position.y - Ladder.transform.position.y > (-Ladder.transform.localScale.y / 2) + 1.0f) 
                     {
                         self.transform.position += new Vector3(0.0f, -0.1f, 0.0f);
                     }
