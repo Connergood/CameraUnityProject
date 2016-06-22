@@ -346,6 +346,10 @@ Prefab:
       propertyPath: directionY
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11491356, guid: 6ab1238d6a2079a49896c77f7fc1c7be, type: 2}
+      propertyPath: directionX
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ab1238d6a2079a49896c77f7fc1c7be, type: 2}
   m_IsPrefabParent: 0
@@ -3881,11 +3885,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11491356, guid: 6ab1238d6a2079a49896c77f7fc1c7be, type: 2}
       propertyPath: targetY
-      value: -12
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 11491356, guid: 6ab1238d6a2079a49896c77f7fc1c7be, type: 2}
       propertyPath: directionY
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11491356, guid: 6ab1238d6a2079a49896c77f7fc1c7be, type: 2}
+      propertyPath: directionX
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ab1238d6a2079a49896c77f7fc1c7be, type: 2}
@@ -4400,8 +4408,8 @@ Prefab:
       value: 111
       objectReference: {fileID: 0}
     - target: {fileID: 11491356, guid: 6ab1238d6a2079a49896c77f7fc1c7be, type: 2}
-      propertyPath: targetY
-      value: 3
+      propertyPath: directionY
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11491356, guid: 6ab1238d6a2079a49896c77f7fc1c7be, type: 2}
       propertyPath: directionX
@@ -4409,7 +4417,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11491356, guid: 6ab1238d6a2079a49896c77f7fc1c7be, type: 2}
       propertyPath: targetX
-      value: -14
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ab1238d6a2079a49896c77f7fc1c7be, type: 2}
