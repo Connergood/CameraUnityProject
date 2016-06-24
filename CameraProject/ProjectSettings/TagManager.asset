@@ -17,6 +17,7 @@ TagManager:
   - Canvas
   - Ladder
   - Platform
+  - Key
   layers:
   - Default
   - TransparentFX

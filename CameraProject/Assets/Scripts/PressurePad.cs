@@ -51,7 +51,7 @@ public class PressurePad : MonoBehaviour {
             {
                 activated = true;
                 StopAllCoroutines();
-                StartCoroutine(MoveCubeTo(2.0f));
+                StartCoroutine(MoveCubeTo(speedOfTransition));
                 StartCoroutine(RotateCube(new Vector3(0.0f, 0.0f, 1.0f) * rotate, 2.0f));
                 StartCoroutine(Wait());
                 MeshRenderer mr = self.GetComponent<MeshRenderer>();
@@ -82,7 +82,7 @@ public class PressurePad : MonoBehaviour {
                 Mathf.Abs(GameObject.Find("Player").transform.position.y - transform.position.y) < distanceFromSwitch + transform.localScale.y / 2)
             {
                 StopAllCoroutines();
-                StartCoroutine(MoveCubeTo(2.0f));
+                StartCoroutine(MoveCubeTo(speedOfTransition));
                 StartCoroutine(RotateCube(new Vector3(0.0f, 0.0f, 1.0f) * rotate, 2.0f));
                 activated = true;
                 StartCoroutine(Wait());
@@ -104,7 +104,7 @@ public class PressurePad : MonoBehaviour {
 		if ((collision.transform.tag == "Player" || collision.transform.tag == "Weight") && !isActionItemSwitch){
 			if (!activated && !isActivatedByCamera){
 				StopAllCoroutines();
-				StartCoroutine(MoveCubeTo(2.0f));
+				StartCoroutine(MoveCubeTo(speedOfTransition));
 				StartCoroutine(RotateCube(new Vector3(0.0f, 0.0f, 1.0f) * rotate, 2.0f)) ;
 				activated = true;
 				StartCoroutine(Wait ());

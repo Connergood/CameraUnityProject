@@ -14,6 +14,7 @@ public class PlayerControl : MonoBehaviour
     public bool alive = true;
     public bool onLadder = false;
     public bool playerHidden = false;
+    public int keyCount = 0;
 
     Vector3 lockedPos;
     // Use this for initialization
@@ -86,6 +87,15 @@ public class PlayerControl : MonoBehaviour
         }
         lockedPos = ObjPos;
     }
+    void OnCollisionEnter2D(Collision2D hit)
+    {
+        if (hit.gameObject.tag == "Key")
+        {
+            Destroy(hit.gameObject);
+            keyCount++;
+        }
+    }
+
     void OnCollisionStay2D(Collision2D hit)
     {
         if (hit.gameObject.tag == "Platform")

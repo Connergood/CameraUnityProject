@@ -5,8 +5,9 @@ public class Door : MonoBehaviour {
 
     public GameObject[] ThingsToHide;
     public GameObject[] ThingsToReveal;
-    bool inDoor = false;
+    public bool inDoor = false;
     GameObject Player;
+    public GameObject[] DoorsThatAttachToTheSameRooms;
 
 	// Use this for initialization
 	void Start () {
@@ -44,6 +45,10 @@ public class Door : MonoBehaviour {
             {
                 ThingsToReveal[i].SetActive(false);
             }
+        }
+        for (int i = 0; i < DoorsThatAttachToTheSameRooms.Length; i++)
+        {
+            DoorsThatAttachToTheSameRooms[i].GetComponent<Door>().inDoor = inDoor;
         }
 	}
 }
