@@ -14,11 +14,16 @@ public class Ladder : MonoBehaviour {
 	void Update () {
         if (Mathf.Abs(Player.transform.position.x - transform.position.x) < .5f && Mathf.Abs(Player.transform.position.y - transform.position.y) < transform.localScale.y / 2)
         {
+            //GameObject.Find("Action Text").SetActive(true);
+            //GameObject.Find("Action Text").GetComponent<TextMesh>().text = "Press Q";
             if (Input.GetButton("Action"))
             {
                 Player.GetComponent<PlayerControl>().onLadder = true;
                 Player.GetComponent<PlayerControl>().Ladder = gameObject;
             }
+        } else
+        {
+            //GameObject.Find("Action Text").SetActive(false);
         }
 	}
 }

@@ -6,8 +6,9 @@ public class PressurePad : MonoBehaviour {
 	[SerializeField] GameObject self;
 	[SerializeField] GameObject cubeToMove;
     [SerializeField] bool isActivatedByCamera;
+    [SerializeField] bool isOnlyActivatedByWeight = false;
 
-	[SerializeField] float translateX;
+    [SerializeField] float translateX;
 	[SerializeField] float translateY;
 	[SerializeField] float rotate;
 
@@ -101,7 +102,7 @@ public class PressurePad : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D collision){
-		if ((collision.transform.tag == "Player" || collision.transform.tag == "Weight") && !isActionItemSwitch){
+		if (((collision.transform.tag == "Player" && !isOnlyActivatedByWeight) || collision.transform.tag == "Weight") && !isActionItemSwitch){
 			if (!activated && !isActivatedByCamera){
 				StopAllCoroutines();
 				StartCoroutine(MoveCubeTo(speedOfTransition));
@@ -115,7 +116,7 @@ public class PressurePad : MonoBehaviour {
 	}
 
 	void OnCollisionExit2D(Collision2D collision){
-		if ((collision.transform.tag == "Player" || collision.transform.tag == "Weight") && !isActionItemSwitch)
+		if (((collision.transform.tag == "Player" && !isOnlyActivatedByWeight) || collision.transform.tag == "Weight") && !isActionItemSwitch)
         {
 			if (activated && type == State.weighted){
 				StopAllCoroutines();
