@@ -4967,6 +4967,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 705c80209fe51964da1606ad85c6a3d4, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &543083815 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 105058, guid: 64f7b73d98364dc4fbc0b688463cf24c, type: 2}
+  m_PrefabInternal: {fileID: 1609139936}
 --- !u!1001 &546026737
 Prefab:
   m_ObjectHideFlags: 0
@@ -6786,6 +6790,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11435572, guid: 64f7b73d98364dc4fbc0b688463cf24c, type: 2}
+      propertyPath: DoorsThatAttachToTheSameRooms.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 413358, guid: 64f7b73d98364dc4fbc0b688463cf24c, type: 2}
       propertyPath: m_LocalPosition.x
       value: 15.49
@@ -6830,6 +6838,18 @@ Prefab:
       propertyPath: m_Name
       value: Door (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 11435572, guid: 64f7b73d98364dc4fbc0b688463cf24c, type: 2}
+      propertyPath: DoorsThatAttachToTheSameRooms.Array.data[0]
+      value: 
+      objectReference: {fileID: 847318944}
+    - target: {fileID: 11435572, guid: 64f7b73d98364dc4fbc0b688463cf24c, type: 2}
+      propertyPath: DoorsThatAttachToTheSameRooms.Array.data[1]
+      value: 
+      objectReference: {fileID: 543083815}
+    - target: {fileID: 11435572, guid: 64f7b73d98364dc4fbc0b688463cf24c, type: 2}
+      propertyPath: DoorsThatAttachToTheSameRooms.Array.data[2]
+      value: 
+      objectReference: {fileID: 1322972375}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 64f7b73d98364dc4fbc0b688463cf24c, type: 2}
   m_IsPrefabParent: 0
@@ -8529,6 +8549,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f78edb2e9cc491f43a371bf4b45f5814, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &847318944 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 105058, guid: 64f7b73d98364dc4fbc0b688463cf24c, type: 2}
+  m_PrefabInternal: {fileID: 1769198671}
 --- !u!1001 &849603984
 Prefab:
   m_ObjectHideFlags: 0
@@ -11510,6 +11534,14 @@ Prefab:
       propertyPath: cubeToMove
       value: 
       objectReference: {fileID: 1200935067}
+    - target: {fileID: 11437400, guid: 43f7f34ee11b93444827c99e6d0b3600, type: 2}
+      propertyPath: speedOfTransition
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11437400, guid: 43f7f34ee11b93444827c99e6d0b3600, type: 2}
+      propertyPath: distanceFromSwitch
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 43f7f34ee11b93444827c99e6d0b3600, type: 2}
   m_IsPrefabParent: 0
@@ -12529,6 +12561,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 943bbfc5f9b3d6b48ad11439ef38c9d5, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1322972375 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 105058, guid: 64f7b73d98364dc4fbc0b688463cf24c, type: 2}
+  m_PrefabInternal: {fileID: 1760285762}
 --- !u!1001 &1323073802
 Prefab:
   m_ObjectHideFlags: 0
@@ -14741,6 +14777,48 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f78edb2e9cc491f43a371bf4b45f5814, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &1564590379
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 411812, guid: bb8548d927c5173408c9d40f10d8d99c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 411812, guid: bb8548d927c5173408c9d40f10d8d99c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 411812, guid: bb8548d927c5173408c9d40f10d8d99c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 411812, guid: bb8548d927c5173408c9d40f10d8d99c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 411812, guid: bb8548d927c5173408c9d40f10d8d99c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 411812, guid: bb8548d927c5173408c9d40f10d8d99c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 411812, guid: bb8548d927c5173408c9d40f10d8d99c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 411812, guid: bb8548d927c5173408c9d40f10d8d99c, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: bb8548d927c5173408c9d40f10d8d99c, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1566755216
 Prefab:
   m_ObjectHideFlags: 0
@@ -15272,6 +15350,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11435572, guid: 64f7b73d98364dc4fbc0b688463cf24c, type: 2}
+      propertyPath: DoorsThatAttachToTheSameRooms.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 413358, guid: 64f7b73d98364dc4fbc0b688463cf24c, type: 2}
       propertyPath: m_LocalPosition.x
       value: -11.506887
@@ -15312,6 +15394,18 @@ Prefab:
       propertyPath: ThingsToHide.Array.data[0]
       value: 
       objectReference: {fileID: 927500674}
+    - target: {fileID: 11435572, guid: 64f7b73d98364dc4fbc0b688463cf24c, type: 2}
+      propertyPath: DoorsThatAttachToTheSameRooms.Array.data[0]
+      value: 
+      objectReference: {fileID: 847318944}
+    - target: {fileID: 11435572, guid: 64f7b73d98364dc4fbc0b688463cf24c, type: 2}
+      propertyPath: DoorsThatAttachToTheSameRooms.Array.data[1]
+      value: 
+      objectReference: {fileID: 1766067828}
+    - target: {fileID: 11435572, guid: 64f7b73d98364dc4fbc0b688463cf24c, type: 2}
+      propertyPath: DoorsThatAttachToTheSameRooms.Array.data[2]
+      value: 
+      objectReference: {fileID: 1322972375}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 64f7b73d98364dc4fbc0b688463cf24c, type: 2}
   m_IsPrefabParent: 0
@@ -17041,6 +17135,48 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 943bbfc5f9b3d6b48ad11439ef38c9d5, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &1757599044
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 480208, guid: fa23c66692148514ba93dde710d87d74, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 480208, guid: fa23c66692148514ba93dde710d87d74, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 480208, guid: fa23c66692148514ba93dde710d87d74, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 480208, guid: fa23c66692148514ba93dde710d87d74, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 480208, guid: fa23c66692148514ba93dde710d87d74, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 480208, guid: fa23c66692148514ba93dde710d87d74, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 480208, guid: fa23c66692148514ba93dde710d87d74, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 480208, guid: fa23c66692148514ba93dde710d87d74, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: fa23c66692148514ba93dde710d87d74, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1760285762
 Prefab:
   m_ObjectHideFlags: 0
@@ -17048,6 +17184,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11435572, guid: 64f7b73d98364dc4fbc0b688463cf24c, type: 2}
+      propertyPath: DoorsThatAttachToTheSameRooms.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 413358, guid: 64f7b73d98364dc4fbc0b688463cf24c, type: 2}
       propertyPath: m_LocalPosition.x
       value: 15.49
@@ -17092,6 +17232,18 @@ Prefab:
       propertyPath: m_Name
       value: Door (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 11435572, guid: 64f7b73d98364dc4fbc0b688463cf24c, type: 2}
+      propertyPath: DoorsThatAttachToTheSameRooms.Array.data[0]
+      value: 
+      objectReference: {fileID: 543083815}
+    - target: {fileID: 11435572, guid: 64f7b73d98364dc4fbc0b688463cf24c, type: 2}
+      propertyPath: DoorsThatAttachToTheSameRooms.Array.data[1]
+      value: 
+      objectReference: {fileID: 847318944}
+    - target: {fileID: 11435572, guid: 64f7b73d98364dc4fbc0b688463cf24c, type: 2}
+      propertyPath: DoorsThatAttachToTheSameRooms.Array.data[2]
+      value: 
+      objectReference: {fileID: 1766067828}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 64f7b73d98364dc4fbc0b688463cf24c, type: 2}
   m_IsPrefabParent: 0
@@ -17137,6 +17289,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 943bbfc5f9b3d6b48ad11439ef38c9d5, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1766067828 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 105058, guid: 64f7b73d98364dc4fbc0b688463cf24c, type: 2}
+  m_PrefabInternal: {fileID: 716238918}
 --- !u!1001 &1769198671
 Prefab:
   m_ObjectHideFlags: 0
@@ -17144,6 +17300,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11435572, guid: 64f7b73d98364dc4fbc0b688463cf24c, type: 2}
+      propertyPath: DoorsThatAttachToTheSameRooms.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 413358, guid: 64f7b73d98364dc4fbc0b688463cf24c, type: 2}
       propertyPath: m_LocalPosition.x
       value: -23.38
@@ -17188,6 +17348,18 @@ Prefab:
       propertyPath: m_Name
       value: Door (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 11435572, guid: 64f7b73d98364dc4fbc0b688463cf24c, type: 2}
+      propertyPath: DoorsThatAttachToTheSameRooms.Array.data[0]
+      value: 
+      objectReference: {fileID: 543083815}
+    - target: {fileID: 11435572, guid: 64f7b73d98364dc4fbc0b688463cf24c, type: 2}
+      propertyPath: DoorsThatAttachToTheSameRooms.Array.data[1]
+      value: 
+      objectReference: {fileID: 1766067828}
+    - target: {fileID: 11435572, guid: 64f7b73d98364dc4fbc0b688463cf24c, type: 2}
+      propertyPath: DoorsThatAttachToTheSameRooms.Array.data[2]
+      value: 
+      objectReference: {fileID: 1322972375}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 64f7b73d98364dc4fbc0b688463cf24c, type: 2}
   m_IsPrefabParent: 0
