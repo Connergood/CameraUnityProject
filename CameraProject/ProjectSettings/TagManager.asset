@@ -18,6 +18,10 @@ TagManager:
   - Ladder
   - Platform
   - Key
+  - Coal
+  - Boiler
+  - PlatOne
+  - PlatTwo
   layers:
   - Default
   - TransparentFX
