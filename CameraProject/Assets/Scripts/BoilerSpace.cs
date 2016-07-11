@@ -5,15 +5,13 @@ public class BoilerSpace : MonoBehaviour {
 
     int coalUsed;
     GameObject boiler;
-    GameObject[] platOnes;
-    GameObject platTwo;
+    public GameObject[] platOnes;
+    public GameObject platTwo;
 
 	// Use this for initialization
 	void Start () {
         coalUsed = 0;
         boiler = GameObject.FindGameObjectWithTag("Boiler");
-        platOnes = GameObject.FindGameObjectsWithTag("PlatOne");
-        platTwo = GameObject.FindGameObjectWithTag("PlatTwo");
     }
 	
 	// Update is called once per frame

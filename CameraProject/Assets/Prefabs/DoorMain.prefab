@@ -1,55 +1,59 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &132874
+--- !u!1 &186352
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 492452}
-  - 212: {fileID: 21243208}
-  - 68: {fileID: 6876490}
-  m_Layer: 9
-  m_Name: GroundWithOnlyTopCollision
-  m_TagString: Ground
+  - 4: {fileID: 466700}
+  - 212: {fileID: 21201554}
+  - 114: {fileID: 11455448}
+  m_Layer: 0
+  m_Name: DoorMain
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &492452
+--- !u!4 &466700
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 132874}
+  m_GameObject: {fileID: 186352}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.6332026, y: -1.0064393, z: 10}
-  m_LocalScale: {x: 0.78, y: 0.78, z: 1}
+  m_LocalPosition: {x: 25.90399, y: -1.0471596, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!68 &6876490
-EdgeCollider2D:
+--- !u!114 &11455448
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 132874}
+  m_GameObject: {fileID: 186352}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0.65}
-  m_Points:
-  - {x: -0.64, y: 0}
-  - {x: 0.64, y: 0}
---- !u!212 &21243208
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbd14242917051544aa70d003fb366a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Layer1:
+  - {fileID: 0}
+  Layer2:
+  - {fileID: 0}
+  Layer3:
+  - {fileID: 0}
+  Layer4: []
+  PlayerInLayer: 1
+--- !u!212 &21201554
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 132874}
+  m_GameObject: {fileID: 186352}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -70,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6c0e73e35756b164c8a22f5e571269c5, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -80,12 +84,8 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
+    m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 132874}
+  m_RootGameObject: {fileID: 186352}
   m_IsPrefabParent: 1

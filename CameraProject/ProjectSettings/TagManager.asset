@@ -22,6 +22,7 @@ TagManager:
   - Boiler
   - PlatOne
   - PlatTwo
+  - Door
   layers:
   - Default
   - TransparentFX

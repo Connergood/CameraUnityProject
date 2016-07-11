@@ -8,7 +8,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 419452}
-  - 212: {fileID: 21268204}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -26,6 +25,7 @@ GameObject:
   - 4: {fileID: 476642}
   - 114: {fileID: 11452978}
   - 61: {fileID: 6175592}
+  - 212: {fileID: 21230930}
   m_Layer: 0
   m_Name: CameraObject
   m_TagString: Ground
@@ -41,7 +41,7 @@ Transform:
   m_GameObject: {fileID: 107314}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.78, y: 0.78, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 476642}
   m_RootOrder: 0
@@ -53,7 +53,7 @@ Transform:
   m_GameObject: {fileID: 167398}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4, y: 2, z: 10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.78, y: 0.78, z: 1}
   m_Children:
   - {fileID: 419452}
   m_Father: {fileID: 0}
@@ -71,7 +71,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.28, y: 1.28}
 --- !u!114 &11452978
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -90,12 +90,12 @@ MonoBehaviour:
   limitYDown: 0
   interactWhileLocked: 0
   state: 0
---- !u!212 &21268204
+--- !u!212 &21230930
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 107314}
+  m_GameObject: {fileID: 167398}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -141,12 +141,33 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.78
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 1d78401ede3ad25458ffcd868b627e11, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8e0bdb6f2189b8949bbfb7a449790c02,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.x
+      value: 0.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Size.x
+      value: 1.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Size.y
+      value: 1.28
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 167398}

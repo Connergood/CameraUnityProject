@@ -3,15 +3,15 @@ using System.Collections;
 
 public class Door : MonoBehaviour {
 
-    public GameObject[] ThingsToHide;
-    public GameObject[] ThingsToReveal;
-    public bool inDoor = false;
     GameObject Player;
-    public GameObject[] DoorsThatAttachToTheSameRooms;
+    DoorMain main;
+    public int firstLayer = 1;
+    public int secondLayer = 2;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         Player = GameObject.Find("Player");
+        main = GameObject.Find("DoorMain").GetComponent<DoorMain>();
 	}
 	
 	// Update is called once per frame
@@ -22,33 +22,14 @@ public class Door : MonoBehaviour {
         {
             if (Input.GetButtonDown("Action"))
             {
-                inDoor = !inDoor;
+                if(main.PlayerInLayer == firstLayer)
+                {
+                    main.PlayerInLayer = secondLayer;
+                } else
+                {
+                    main.PlayerInLayer = firstLayer;
+                }
             }
-        }
-        if (inDoor)
-        {
-            for (int i = 0; i < ThingsToHide.Length; i++)
-            {
-                ThingsToHide[i].SetActive(false);
-            }
-            for (int i = 0; i < ThingsToReveal.Length; i++)
-            {
-                ThingsToReveal[i].SetActive(true);
-            }
-        } else
-        {
-            for (int i = 0; i < ThingsToHide.Length; i++)
-            {
-                ThingsToHide[i].SetActive(true);
-            }
-            for (int i = 0; i < ThingsToReveal.Length; i++)
-            {
-                ThingsToReveal[i].SetActive(false);
-            }
-        }
-        for (int i = 0; i < DoorsThatAttachToTheSameRooms.Length; i++)
-        {
-            DoorsThatAttachToTheSameRooms[i].GetComponent<Door>().inDoor = inDoor;
         }
 	}
 }

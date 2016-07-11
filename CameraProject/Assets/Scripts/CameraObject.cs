@@ -45,7 +45,7 @@ public class CameraObject : MonoBehaviour {
 		limitYUp = Mathf.Abs (limitYUp);
 		limitYDown = -Mathf.Abs (limitYDown);
 
-        Mesh = self.GetComponentInChildren<SpriteRenderer>();
+        Mesh = self.GetComponent<SpriteRenderer>();
         boxCollider = self.GetComponent<BoxCollider2D>();
 
     }

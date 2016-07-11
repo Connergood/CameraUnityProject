@@ -52,5 +52,13 @@ public class GrabAbleObject : MonoBehaviour {
                                                   transform.position.y - Player.transform.position.y);
             }
         }
+        if(gameObject.GetComponent<BoxCollider2D>().enabled == false)
+        {
+            gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
+        }
+        else 
+        {
+            gameObject.GetComponent<Rigidbody2D>().isKinematic = false;
+        }
     }
 }
