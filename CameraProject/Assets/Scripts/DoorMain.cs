@@ -26,6 +26,7 @@ public class DoorMain : MonoBehaviour {
 
                 BoxCollider2D[] boxes = Layer1[i].GetComponentsInChildren<BoxCollider2D>();
                 SpriteRenderer[] sprites = Layer1[i].GetComponentsInChildren<SpriteRenderer>();
+                MeshRenderer[] meshes = Layer1[i].GetComponentsInChildren<MeshRenderer>();
                 for (int j = 0; j < boxes.Length; j++)
                 {
                     boxes[j].enabled = true;
@@ -33,6 +34,10 @@ public class DoorMain : MonoBehaviour {
                 for (int j = 0; j < sprites.Length; j++)
                 {
                     sprites[j].enabled = true;
+                }
+                for (int j = 0; j < meshes.Length; j++)
+                {
+                    meshes[j].enabled = true;
                 }
             }
         }
@@ -43,6 +48,7 @@ public class DoorMain : MonoBehaviour {
 
                 BoxCollider2D[] boxes = Layer1[i].GetComponentsInChildren<BoxCollider2D>();
                 SpriteRenderer[] sprites = Layer1[i].GetComponentsInChildren<SpriteRenderer>();
+                MeshRenderer[] meshes = Layer1[i].GetComponentsInChildren<MeshRenderer>();
                 for (int j = 0; j < boxes.Length; j++)
                 {
                     boxes[j].enabled = false;
@@ -50,6 +56,10 @@ public class DoorMain : MonoBehaviour {
                 for (int j = 0; j < sprites.Length; j++)
                 {
                     sprites[j].enabled = false;
+                }
+                for (int j = 0; j < meshes.Length; j++)
+                {
+                    meshes[j].enabled = false;
                 }
             }
         }
@@ -60,6 +70,7 @@ public class DoorMain : MonoBehaviour {
 
                 BoxCollider2D[] boxes = Layer2[i].GetComponentsInChildren<BoxCollider2D>();
                 SpriteRenderer[] sprites = Layer2[i].GetComponentsInChildren<SpriteRenderer>();
+                MeshRenderer[] meshes = Layer2[i].GetComponentsInChildren<MeshRenderer>();
                 for (int j = 0; j < boxes.Length; j++)
                 {
                     boxes[j].enabled = true;
@@ -67,6 +78,10 @@ public class DoorMain : MonoBehaviour {
                 for (int j = 0; j < sprites.Length; j++)
                 {
                     sprites[j].enabled = true;
+                }
+                for (int j = 0; j < meshes.Length; j++)
+                {
+                    meshes[j].enabled = true;
                 }
             }
         }
@@ -77,6 +92,7 @@ public class DoorMain : MonoBehaviour {
 
                 BoxCollider2D[] boxes = Layer2[i].GetComponentsInChildren<BoxCollider2D>();
                 SpriteRenderer[] sprites = Layer2[i].GetComponentsInChildren<SpriteRenderer>();
+                MeshRenderer[] meshes = Layer2[i].GetComponentsInChildren<MeshRenderer>();
                 for (int j = 0; j < boxes.Length; j++)
                 {
                     boxes[j].enabled = false;
@@ -84,6 +100,10 @@ public class DoorMain : MonoBehaviour {
                 for (int j = 0; j < sprites.Length; j++)
                 {
                     sprites[j].enabled = false;
+                }
+                for (int j = 0; j < meshes.Length; j++)
+                {
+                    meshes[j].enabled = false;
                 }
             }
         }
@@ -94,6 +114,7 @@ public class DoorMain : MonoBehaviour {
 
                 BoxCollider2D[] boxes = Layer3[i].GetComponentsInChildren<BoxCollider2D>();
                 SpriteRenderer[] sprites = Layer3[i].GetComponentsInChildren<SpriteRenderer>();
+                MeshRenderer[] meshes = Layer3[i].GetComponentsInChildren<MeshRenderer>();
                 for (int j = 0; j < boxes.Length; j++)
                 {
                     boxes[j].enabled = true;
@@ -101,6 +122,10 @@ public class DoorMain : MonoBehaviour {
                 for (int j = 0; j < sprites.Length; j++)
                 {
                     sprites[j].enabled = true;
+                }
+                for (int j = 0; j < meshes.Length; j++)
+                {
+                    meshes[j].enabled = true;
                 }
             }
         }
@@ -111,6 +136,7 @@ public class DoorMain : MonoBehaviour {
 
                 BoxCollider2D[] boxes = Layer3[i].GetComponentsInChildren<BoxCollider2D>();
                 SpriteRenderer[] sprites = Layer3[i].GetComponentsInChildren<SpriteRenderer>();
+                MeshRenderer[] meshes = Layer3[i].GetComponentsInChildren<MeshRenderer>();
                 for (int j = 0; j < boxes.Length; j++)
                 {
                     boxes[j].enabled = false;
@@ -118,6 +144,10 @@ public class DoorMain : MonoBehaviour {
                 for (int j = 0; j < sprites.Length; j++)
                 {
                     sprites[j].enabled = false;
+                }
+                for (int j = 0; j < meshes.Length; j++)
+                {
+                    meshes[j].enabled = false;
                 }
             }
         }
@@ -128,6 +158,7 @@ public class DoorMain : MonoBehaviour {
 
                 BoxCollider2D[] boxes = Layer4[i].GetComponentsInChildren<BoxCollider2D>();
                 SpriteRenderer[] sprites = Layer4[i].GetComponentsInChildren<SpriteRenderer>();
+                MeshRenderer[] meshes = Layer4[i].GetComponentsInChildren<MeshRenderer>();
                 for (int j = 0; j < boxes.Length; j++)
                 {
                     boxes[j].enabled = true;
@@ -135,6 +166,10 @@ public class DoorMain : MonoBehaviour {
                 for (int j = 0; j < sprites.Length; j++)
                 {
                     sprites[j].enabled = true;
+                }
+                for (int j = 0; j < meshes.Length; j++)
+                {
+                    meshes[j].enabled = true;
                 }
             }
         }
@@ -145,6 +180,7 @@ public class DoorMain : MonoBehaviour {
 
                 BoxCollider2D[] boxes = Layer4[i].GetComponentsInChildren<BoxCollider2D>();
                 SpriteRenderer[] sprites = Layer4[i].GetComponentsInChildren<SpriteRenderer>();
+                MeshRenderer[] meshes = Layer4[i].GetComponentsInChildren<MeshRenderer>();
                 for (int j = 0; j < boxes.Length; j++)
                 {
                     boxes[j].enabled = false;
@@ -152,6 +188,10 @@ public class DoorMain : MonoBehaviour {
                 for (int j = 0; j < sprites.Length; j++)
                 {
                     sprites[j].enabled = false;
+                }
+                for (int j = 0; j < meshes.Length; j++)
+                {
+                    meshes[j].enabled = false;
                 }
             }
         }
