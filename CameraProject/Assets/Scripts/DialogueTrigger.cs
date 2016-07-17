@@ -7,6 +7,7 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] GameObject DialogueCanvas;
     public bool activated;
     public List<string> dialogue;
+    public GameObject[] speakerImages;
     GameObject player;
     public bool lockPlayer = true;
 
@@ -25,8 +26,12 @@ public class DialogueTrigger : MonoBehaviour
             if ((this.transform.position - player.transform.position).magnitude < 1.0f)
             {
                 this.activated = true;
-                DialogueCanvas.GetComponent<Dialogue>().ActivateDialogue(dialogue);
-                GameObject.Find("Main").GetComponent<Main>().lockThingsInPlace(lockPlayer);
+                DialogueCanvas.GetComponent<Dialogue>().ActivateDialogue(dialogue,speakerImages);
+                for (int i = 0; i < dialogue.Count; i++)
+                {
+                    dialogue[i] = dialogue[i].Replace("@", System.Environment.NewLine);
+                }
+                //GameObject.Find("Main").GetComponent<Main>().lockThingsInPlace(lockPlayer);
             }
 
         }

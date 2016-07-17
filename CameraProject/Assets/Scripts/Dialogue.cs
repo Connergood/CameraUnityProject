@@ -9,6 +9,7 @@ public class Dialogue : MonoBehaviour {
     GameObject nameText;
     GameObject dialogueText;
     public List<string> speech;
+    GameObject[] image;
     public float textDelay = .01f;
     float timeLeft;
     string textToDisplay;
@@ -42,6 +43,17 @@ public class Dialogue : MonoBehaviour {
             letterIndex++;
         }
         dialogueText.GetComponent<TextMesh>().text = textToDisplay;
+        for (int i = 0; i < image.Length; i++)
+        {
+           
+            if (i == index)
+            {
+                image[i].transform.position = new Vector3(image[i].transform.position.x, image[i].transform.position.y, -12.0f);
+            } else if (image[i] != image[index])
+            {
+                image[i].transform.position = new Vector3(image[i].transform.position.x, image[i].transform.position.y, -11.0f);
+            }
+        }
 
         if(!active)
         {
@@ -56,11 +68,12 @@ public class Dialogue : MonoBehaviour {
         
     }
 
-    public void ActivateDialogue(List<string> nameSpeech)
+    public void ActivateDialogue(List<string> nameSpeech, GameObject[] images)
     {
         active = true;
         speech = nameSpeech;
         index = 0;
+        image = images;
     }
 
     public void OnClick()
@@ -74,7 +87,7 @@ public class Dialogue : MonoBehaviour {
             letterIndex = 0;
             textToDisplay = "";
             active = false;
-            GameObject.Find("Main").GetComponent<Main>().lockThingsInPlace(false);
+            //GameObject.Find("Main").GetComponent<Main>().lockThingsInPlace(false);
         }
     }
 }

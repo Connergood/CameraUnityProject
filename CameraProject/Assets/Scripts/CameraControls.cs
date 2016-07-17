@@ -8,6 +8,10 @@ public class CameraControls : MonoBehaviour {
 	public bool active = true;
     float moveX;
     float moveY;
+    public float maxX = 50.0f;
+    public float maxY = 50.0f;
+    public float minX = -50.0f;
+    public float minY = -50.0f;
     public float speed = 5.0f;
 
 	// Use this for initialization
@@ -40,5 +44,21 @@ public class CameraControls : MonoBehaviour {
     void FixedUpdate()
     {
         self.GetComponent<Rigidbody2D>().velocity = new Vector2(moveX * speed, moveY * speed);
+        if(maxX < transform.position.x)
+        {
+            transform.position = new Vector3(maxX, transform.position.y, transform.position.z);
+        }
+        if (minX > transform.position.x)
+        {
+            transform.position = new Vector3(minX, transform.position.y, transform.position.z);
+        }
+        if (maxY < transform.position.y)
+        {
+            transform.position = new Vector3(transform.position.x, maxY, transform.position.z);
+        }
+        if (minY > transform.position.y)
+        {
+            transform.position = new Vector3(transform.position.x, minY, transform.position.z);
+        }
     }
 }

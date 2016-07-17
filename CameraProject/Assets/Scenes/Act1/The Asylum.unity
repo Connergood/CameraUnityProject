@@ -10378,7 +10378,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 464332, guid: 7c989bfc724e07b42a18c335b73b672e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2.5
+      value: 1.17
       objectReference: {fileID: 0}
     - target: {fileID: 464332, guid: 7c989bfc724e07b42a18c335b73b672e, type: 2}
       propertyPath: m_LocalPosition.y
@@ -10415,6 +10415,10 @@ Prefab:
     - target: {fileID: 11403896, guid: 7c989bfc724e07b42a18c335b73b672e, type: 2}
       propertyPath: minY
       value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 412862, guid: 7c989bfc724e07b42a18c335b73b672e, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7c989bfc724e07b42a18c335b73b672e, type: 2}
@@ -19853,6 +19857,64 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 943bbfc5f9b3d6b48ad11439ef38c9d5, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &636221337
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 636221338}
+  - 212: {fileID: 636221339}
+  m_Layer: 0
+  m_Name: Door (11)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &636221338
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 636221337}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.42, y: -0.16199994, z: 10}
+  m_LocalScale: {x: 0.03448855, y: 0.31371453, z: 0.31371453}
+  m_Children: []
+  m_Father: {fileID: 1511160072}
+  m_RootOrder: 721
+--- !u!212 &636221339
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 636221337}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 0
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 753112e13c4f6264695fe3ce5ea7a1c8, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
 --- !u!1001 &637559863
 Prefab:
   m_ObjectHideFlags: 0
@@ -26005,6 +26067,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 943bbfc5f9b3d6b48ad11439ef38c9d5, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &858328057 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 132096, guid: 3e0bb7df04ef8a148b276ecb08c01366, type: 2}
+  m_PrefabInternal: {fileID: 1598505776}
 --- !u!1001 &864659798
 Prefab:
   m_ObjectHideFlags: 0
@@ -35063,6 +35129,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 943bbfc5f9b3d6b48ad11439ef38c9d5, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1161871604 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 152188, guid: 3e0bb7df04ef8a148b276ecb08c01366, type: 2}
+  m_PrefabInternal: {fileID: 1598505776}
 --- !u!1001 &1164440275
 Prefab:
   m_ObjectHideFlags: 0
@@ -35609,6 +35679,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 705c80209fe51964da1606ad85c6a3d4, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1189245936 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 187416, guid: 3e0bb7df04ef8a148b276ecb08c01366, type: 2}
+  m_PrefabInternal: {fileID: 1598505776}
 --- !u!1001 &1194071271
 Prefab:
   m_ObjectHideFlags: 0
@@ -40305,6 +40379,10 @@ Prefab:
     - target: {fileID: 476642, guid: 7987bdfef8f07c04bb1d308eb04c4ec2, type: 2}
       propertyPath: m_LocalScale.y
       value: 3.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 11452978, guid: 7987bdfef8f07c04bb1d308eb04c4ec2, type: 2}
+      propertyPath: interactWhileLocked
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7987bdfef8f07c04bb1d308eb04c4ec2, type: 2}
@@ -45101,6 +45179,171 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 943bbfc5f9b3d6b48ad11439ef38c9d5, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &1507287424
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.size
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: speakerImages.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334994, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 155912, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_Name
+      value: DialogueTrigger (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[1]
+      value: Alright. Keep your eyes peeled for anything good. People @love looking
+        at ruined stuff; the beauty of it.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[3]
+      value: Basically, keep you off camera at all times. Got it.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[4]
+      value: 'Reporter:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[5]
+      value: A lot of these doors are blocked or locked. Can't @see a way to get in.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: speakerImages.Array.data[0]
+      value: 
+      objectReference: {fileID: 1161871604}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: speakerImages.Array.data[1]
+      value: 
+      objectReference: {fileID: 1189245936}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: DialogueCanvas
+      value: 
+      objectReference: {fileID: 858328057}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: lockPlayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[0]
+      value: 'Reporter:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[2]
+      value: 'Camera Man:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[6]
+      value: 'Camera Man:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[7]
+      value: The demolition crew installed electronic locks @to work with the old
+        security system in here
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[8]
+      value: 'Reporter:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[9]
+      value: Why?
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[10]
+      value: 'Camera Man:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[11]
+      value: Makes it easier to clen out the building, @I think.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[12]
+      value: 'Reporter:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[13]
+      value: So we need a key card?
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[14]
+      value: 'Camera Man:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[15]
+      value: If we can find the security terminal, we can @probably work the doors
+        remotely.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: speakerImages.Array.data[2]
+      value: 
+      objectReference: {fileID: 1161871604}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: speakerImages.Array.data[3]
+      value: 
+      objectReference: {fileID: 1189245936}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: speakerImages.Array.data[4]
+      value: 
+      objectReference: {fileID: 1161871604}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: speakerImages.Array.data[5]
+      value: 
+      objectReference: {fileID: 1189245936}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: speakerImages.Array.data[6]
+      value: 
+      objectReference: {fileID: 1161871604}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: speakerImages.Array.data[7]
+      value: 
+      objectReference: {fileID: 1189245936}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1508802408
 Prefab:
   m_ObjectHideFlags: 0
@@ -45770,7 +46013,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
 --- !u!1001 &1533804743
 Prefab:
   m_ObjectHideFlags: 0
@@ -47738,7 +47981,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 439610, guid: 3e0bb7df04ef8a148b276ecb08c01366, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 478364, guid: 3e0bb7df04ef8a148b276ecb08c01366, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 116840, guid: 3e0bb7df04ef8a148b276ecb08c01366, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 418600, guid: 3e0bb7df04ef8a148b276ecb08c01366, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3e0bb7df04ef8a148b276ecb08c01366, type: 2}
@@ -51946,7 +52201,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11435572, guid: 64f7b73d98364dc4fbc0b688463cf24c, type: 2}
       propertyPath: secondLayer
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 64f7b73d98364dc4fbc0b688463cf24c, type: 2}

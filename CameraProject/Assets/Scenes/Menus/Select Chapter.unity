@@ -1411,9 +1411,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'The Beginning 1
-
-'
+  m_Text: Breaking In
 --- !u!222 &283278990
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1953,7 +1951,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Scenes/Act1/Chapter 2
+          m_StringArgument: Scenes/Act1/The Asylum
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -3406,13 +3404,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Holy Shit I'm Writing some epic stuff down about these two people who break
-    into an insane asylum just to report on it. Well I can't think of that much bullshit
-    to write so I hope you enjoyed this. Although I am only halfway through I still
-    need to talk about stuff. Emperor Kuzco's Poison, Kuzko's poison, the poison for
-    Kuzco. Ya know I was thinking that would take up more than a few lines. Like I
-    thought I remembered more of that than I did. Well I didn't. We can talk about
-    shrimp. Shrimp is soooooooo good.....
+  m_Text: The reporting duo wexplore the inside of the asylum.
 --- !u!222 &764783335
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3485,13 +3477,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Holy Shit I'm Writing some epic stuff down about these two people who break
-    into an insane asylum just to report on it. Well I can't think of that much bullshit
-    to write so I hope you enjoyed this. Although I am only halfway through I still
-    need to talk about stuff. Emperor Kuzco's Poison, Kuzko's poison, the poison for
-    Kuzco. Ya know I was thinking that would take up more than a few lines. Like I
-    thought I remembered more of that than I did. Well I didn't. We can talk about
-    shrimp. Shrimp is soooooooo good.....
+  m_Text: The reporting duo break into the asylum.
 --- !u!222 &820936286
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4889,7 +4875,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 0
-  m_Text: The Beginning
+  m_Text: The Asylum
 --- !u!222 &1082898458
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5273,7 +5259,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Scenes/Act1/Chapter 1
+          m_StringArgument: Scenes/Act1/Breaking In
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -7337,7 +7323,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 0
-  m_Text: The Beginning
+  m_Text: Breaking In
 --- !u!222 &1756189726
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7752,7 +7738,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: The Beginning 2
+  m_Text: The Asylum
 --- !u!222 &1816586689
 CanvasRenderer:
   m_ObjectHideFlags: 0

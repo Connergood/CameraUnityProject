@@ -54,11 +54,11 @@ public class GrabAbleObject : MonoBehaviour {
         }
         if(gameObject.GetComponent<BoxCollider2D>().enabled == false)
         {
-            gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
+            gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
         }
         else 
         {
-            gameObject.GetComponent<Rigidbody2D>().isKinematic = false;
+            gameObject.GetComponent<Rigidbody2D>().gravityScale = 1;
         }
     }
 }
