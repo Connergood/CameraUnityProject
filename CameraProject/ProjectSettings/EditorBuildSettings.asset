@@ -18,8 +18,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Act1/The Asylum.unity
   - enabled: 1
-    path: Assets/Scenes/Act1/Chapter 3.unity
+    path: Assets/Scenes/Act1/Boiler Room.unity
   - enabled: 1
     path: Assets/Scenes/Act1/Chapter 4.unity
   - enabled: 1
-    path: Assets/Scenes/Act1/Chapter 5.unity
+    path: Assets/Scenes/Act1/The Beginning.unity

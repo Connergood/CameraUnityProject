@@ -10400,6 +10400,10 @@ Prefab:
       propertyPath: interactWhileLocked
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 167398, guid: 7987bdfef8f07c04bb1d308eb04c4ec2, type: 2}
+      propertyPath: m_TagString
+      value: Platform
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7987bdfef8f07c04bb1d308eb04c4ec2, type: 2}
   m_IsPrefabParent: 0
