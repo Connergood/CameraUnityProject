@@ -23,6 +23,7 @@ TagManager:
   - PlatOne
   - PlatTwo
   - Door
+  - Pause
   layers:
   - Default
   - TransparentFX

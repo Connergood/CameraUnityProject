@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Main : MonoBehaviour {
 
@@ -11,6 +12,7 @@ public class Main : MonoBehaviour {
 	public string reason;
 	GameObject theReason;
     public bool thereIsAGrabbedObject = false;
+    GameObject pause;
 
 	// Use this for initialization
 	void Start () {
@@ -27,6 +29,7 @@ public class Main : MonoBehaviour {
 		tm.anchor = TextAnchor.MiddleCenter;
 		tm.alignment = TextAlignment.Center;
 		tm.fontSize = text.GetComponent<TextMesh>().fontSize*3/4;
+        pause = GameObject.FindGameObjectWithTag("Pause");
 	}
 	
 	// Update is called once per frame
@@ -46,9 +49,38 @@ public class Main : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.R))
         {
-            Application.LoadLevel(Application.loadedLevel);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        if(Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
+        {
+            Time.timeScale = 0.0f;
+        }
+
+        if (Time.timeScale == 0.0f)
+        {
+            pause.SetActive(true);
+        } else
+        {
+            pause.SetActive(false);
         }
 	}
+
+    public void Resume()
+    {
+        Time.timeScale = 1.0f;
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Resume();
+    }
+
+    public void ReturnToMain()
+    {
+        SceneManager.LoadScene("Scenes/Menus/MainMenu");
+    }
 
     public void setGrabbable(bool b)
     {

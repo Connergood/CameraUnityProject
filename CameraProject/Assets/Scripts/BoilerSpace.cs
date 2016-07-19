@@ -7,11 +7,17 @@ public class BoilerSpace : MonoBehaviour {
     GameObject boiler;
     public GameObject[] platOnes;
     public GameObject platTwo;
+    public GameObject DT1;
+    public GameObject DT2;
+    public GameObject DT3;
+    public GameObject BlockedPassage;
+    GameObject Player;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         coalUsed = 0;
         boiler = GameObject.FindGameObjectWithTag("Boiler");
+        Player = GameObject.Find("Player");
     }
 	
 	// Update is called once per frame
@@ -37,10 +43,17 @@ public class BoilerSpace : MonoBehaviour {
             {
                 platOnes[i].GetComponent<BoilerPlatform>().start = true;
             }
+            DT1.transform.position = Player.transform.position;
         }
         else if(coalUsed == 2)
         {
             platTwo.GetComponent<BoilerPlatform>().start = true;
+            DT2.transform.position = Player.transform.position;
+        } else if (coalUsed == 3)
+        {
+            DT3.transform.position = Player.transform.position;
+            Destroy(BlockedPassage);
         }
+
     }
 }

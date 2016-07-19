@@ -55,9 +55,8 @@ public class PressurePad : MonoBehaviour {
                 StartCoroutine(MoveCubeTo(speedOfTransition));
                 StartCoroutine(RotateCube(new Vector3(0.0f, 0.0f, 1.0f) * rotate, 2.0f));
                 StartCoroutine(Wait());
-                MeshRenderer mr = self.GetComponent<MeshRenderer>();
-                Material m = mr.material;
-                m.color = Color.red;
+                SpriteRenderer mr = self.GetComponent<SpriteRenderer>();
+                mr.color = Color.red;
             }
         } else if (isActivatedByCamera)
         {
@@ -69,9 +68,8 @@ public class PressurePad : MonoBehaviour {
                 StopAllCoroutines();
                 StartCoroutine(MoveCubeFrom(speedOfTransition));
                 StartCoroutine(RotateCube(new Vector3(0.0f, 0.0f, 1.0f) * -rotate, 2.0f));
-                MeshRenderer mr = self.GetComponent<MeshRenderer>();
-                Material m = mr.material;
-                m.color = Color.magenta;
+                SpriteRenderer mr = self.GetComponent<SpriteRenderer>();
+                mr.color = Color.white;
                 StartCoroutine(Wait());
             }
         }
@@ -90,7 +88,18 @@ public class PressurePad : MonoBehaviour {
                 SpriteRenderer sr = self.GetComponentInChildren<SpriteRenderer>();
                 sr.color = new Color(255, 0, 0);
             }
-        } else if (isActionItemSwitch && type == State.weighted && activated && !Input.GetButton("Action")) {
+        } else if (isActionItemSwitch && type == State.weighted && activated && !Input.GetButton("Action") ) {
+            StopAllCoroutines();
+            StartCoroutine(MoveCubeFrom(speedOfTransition));
+            StartCoroutine(RotateCube(new Vector3(0.0f, 0.0f, 1.0f) * -rotate, 2.0f));
+            activated = false;
+            SpriteRenderer sr = self.GetComponentInChildren<SpriteRenderer>();
+            sr.color = new Color(255, 255, 255);
+            StartCoroutine(Wait());
+        } else if (isActionItemSwitch && type == State.weighted && 
+            (Mathf.Abs(GameObject.Find("Player").transform.position.x - transform.position.x) > distanceFromSwitch + transform.localScale.x / 2 ||
+                Mathf.Abs(GameObject.Find("Player").transform.position.y - transform.position.y) > distanceFromSwitch + transform.localScale.y / 2))
+        {
             StopAllCoroutines();
             StartCoroutine(MoveCubeFrom(speedOfTransition));
             StartCoroutine(RotateCube(new Vector3(0.0f, 0.0f, 1.0f) * -rotate, 2.0f));
