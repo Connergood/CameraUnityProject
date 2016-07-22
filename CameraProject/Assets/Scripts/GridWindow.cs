@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEditor;
+//using UnityEditor;
 
-public class GridWindow : EditorWindow
+public class GridWindow //: EditorWindow
 {
 
-    Grid grid;
+  /*  Grid grid;
 
     public void init()
     {
@@ -15,5 +15,5 @@ public class GridWindow : EditorWindow
     void OnGUI()
     {
         grid.color = EditorGUILayout.ColorField(grid.color, GUILayout.Width(200));
-    }
+    }*/
 }
