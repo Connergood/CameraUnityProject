@@ -18,6 +18,13 @@ public class SceneLoader : MonoBehaviour {
 
     public void LoadScene(string name)
     {
+        StartCoroutine(ChangeLevel(name));
+    }
+
+    IEnumerator ChangeLevel(string name)
+    {
+        float fadeTime = GameObject.Find("Main Camera").GetComponent<Fading>().BeginFade(1);
+        yield return new WaitForSeconds(fadeTime);
         SceneManager.LoadScene(name);
     }
 }

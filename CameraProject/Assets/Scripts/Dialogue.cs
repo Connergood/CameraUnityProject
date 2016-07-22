@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class Dialogue : MonoBehaviour {
 
-    bool active = false;
+    public bool active = false;
     GameObject dialogueBox;
     GameObject nameText;
     GameObject dialogueText;
