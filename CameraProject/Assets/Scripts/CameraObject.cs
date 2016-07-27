@@ -16,6 +16,12 @@ public class CameraObject : MonoBehaviour {
 	[SerializeField] float limitYDown;
     [SerializeField] bool interactWhileLocked;
 
+    [SerializeField] float eventTriggerXLeft;
+    [SerializeField] float eventTriggerXRight;
+    [SerializeField] float eventTriggerYUp;
+    [SerializeField] float eventTriggerYDown;
+
+
     //Hold onto initial location of object so we can calculate if it's out of its box
     Vector2 initialLocation;
 
@@ -28,6 +34,8 @@ public class CameraObject : MonoBehaviour {
 		locked
 	}
 	public State state;
+
+    public bool isEvent;
 
     SpriteRenderer Mesh;
 
@@ -44,6 +52,11 @@ public class CameraObject : MonoBehaviour {
 		limitXRight = Mathf.Abs (limitXRight);
 		limitYUp = Mathf.Abs (limitYUp);
 		limitYDown = -Mathf.Abs (limitYDown);
+
+        eventTriggerXLeft = -Mathf.Abs(eventTriggerXLeft);
+        eventTriggerXRight = Mathf.Abs(eventTriggerXRight);
+        eventTriggerYUp = Mathf.Abs(eventTriggerYUp);
+        eventTriggerYDown = -Mathf.Abs(eventTriggerYDown);
 
         Mesh = self.GetComponent<SpriteRenderer>();
         boxCollider = self.GetComponent<BoxCollider2D>();
@@ -69,6 +82,15 @@ public class CameraObject : MonoBehaviour {
             if (interactWhileLocked)
             {
                 self.transform.position = new Vector3(controller.transform.position.x + difference.x, controller.transform.position.y + difference.y,0.00f);
+
+                if((initialLocation.x + eventTriggerXRight <= self.transform.position.x) &&
+                   (initialLocation.y + eventTriggerYUp <= self.transform.position.y) &&
+                   (initialLocation.x + eventTriggerXLeft >= self.transform.position.x) &&
+                   (initialLocation.y + eventTriggerYDown >= self.transform.position.y))
+                {
+                    isEvent = true;
+                }
+
             } else
             {
                 Mesh.enabled = false;

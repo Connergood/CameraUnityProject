@@ -295,6 +295,88 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 705c80209fe51964da1606ad85c6a3d4, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &25616718
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1385602867}
+    m_Modifications:
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1.443503
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 4.09956
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_RootOrder
+      value: 195
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[0]
+      value: 'Reporter:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[1]
+      value: What the heck are those things?
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[2]
+      value: 'Reporter:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[3]
+      value: Damn
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[4]
+      value: 'Mystery Man:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[5]
+      value: I'm coming for ya
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: activated
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: DialogueCanvas
+      value: 
+      objectReference: {fileID: 2055515969}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: layer
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &30125042
 Prefab:
   m_ObjectHideFlags: 0
@@ -2543,6 +2625,80 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 943bbfc5f9b3d6b48ad11439ef38c9d5, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &260792409
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1385602867}
+    m_Modifications:
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -20.532248
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 9.182526
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_RootOrder
+      value: 194
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[0]
+      value: 'Reporter:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[1]
+      value: Hey, are you there?
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[3]
+      value: Come on, things are getting weird over here!
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[5]
+      value: I could really use some help!
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[4]
+      value: 'Reporter:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: activated
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: DialogueCanvas
+      value: 
+      objectReference: {fileID: 2055515969}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: layer
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &262158000
 Prefab:
   m_ObjectHideFlags: 0
@@ -3726,7 +3882,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 419050, guid: f9a4766f44f14434b9e518c3d2e3b349, type: 2}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 150948, guid: f9a4766f44f14434b9e518c3d2e3b349, type: 2}
       propertyPath: m_Name
@@ -5030,6 +5186,18 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 412862, guid: 7c989bfc724e07b42a18c335b73b672e, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 407326, guid: 7c989bfc724e07b42a18c335b73b672e, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 422742, guid: 7c989bfc724e07b42a18c335b73b672e, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7c989bfc724e07b42a18c335b73b672e, type: 2}
   m_IsPrefabParent: 0
@@ -5111,6 +5279,10 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 496108, guid: e2ed1a10bb6ae234b9beae0531a05dbd, type: 2}
+      propertyPath: m_RootOrder
+      value: 165
+      objectReference: {fileID: 0}
+    - target: {fileID: 405926, guid: e2ed1a10bb6ae234b9beae0531a05dbd, type: 2}
       propertyPath: m_RootOrder
       value: 165
       objectReference: {fileID: 0}
@@ -6352,6 +6524,84 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 943bbfc5f9b3d6b48ad11439ef38c9d5, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &724113346
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 386613751}
+    m_Modifications:
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -10.005428
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 11.658186
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_RootOrder
+      value: 127
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[0]
+      value: 'Reporter:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[1]
+      value: Ah! There's a key!
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[2]
+      value: 'Reporter:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[3]
+      value: Damn
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[4]
+      value: 'Mystery Man:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[5]
+      value: I'm coming for ya
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: DialogueCanvas
+      value: 
+      objectReference: {fileID: 2055515969}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: layer
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &725175946
 Prefab:
@@ -7690,6 +7940,10 @@ Prefab:
       propertyPath: Layer4.Array.data[0]
       value: 
       objectReference: {fileID: 749739775}
+    - target: {fileID: 186352, guid: 81e6e8eb951978549b5d3a357335d081, type: 2}
+      propertyPath: m_TagString
+      value: DoorMain
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 81e6e8eb951978549b5d3a357335d081, type: 2}
   m_IsPrefabParent: 0
@@ -9764,6 +10018,88 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 943bbfc5f9b3d6b48ad11439ef38c9d5, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &1105250465
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1385602867}
+    m_Modifications:
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 3.667091
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.48615885
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_RootOrder
+      value: 196
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[0]
+      value: 'Reporter:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[1]
+      value: Shoot. Looks like it needs a key.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[3]
+      value: Why do none of the doors in this place take the same key?!
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[4]
+      value: 'Mystery Man:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[5]
+      value: I'm coming for ya
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: activated
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: DialogueCanvas
+      value: 
+      objectReference: {fileID: 2055515969}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: keyActivated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: layer
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1105510800
 Prefab:
@@ -14576,11 +14912,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 439610, guid: 3e0bb7df04ef8a148b276ecb08c01366, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 116840, guid: 3e0bb7df04ef8a148b276ecb08c01366, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11421788, guid: 3e0bb7df04ef8a148b276ecb08c01366, type: 2}
       propertyPath: minX
@@ -14609,6 +14945,10 @@ Prefab:
     - target: {fileID: 439610, guid: 3e0bb7df04ef8a148b276ecb08c01366, type: 2}
       propertyPath: m_LocalScale.y
       value: 0.6666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 132096, guid: 3e0bb7df04ef8a148b276ecb08c01366, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3e0bb7df04ef8a148b276ecb08c01366, type: 2}
@@ -17779,6 +18119,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 943bbfc5f9b3d6b48ad11439ef38c9d5, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &2055515969 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 132096, guid: 3e0bb7df04ef8a148b276ecb08c01366, type: 2}
+  m_PrefabInternal: {fileID: 1667559050}
 --- !u!1001 &2061174215
 Prefab:
   m_ObjectHideFlags: 0
