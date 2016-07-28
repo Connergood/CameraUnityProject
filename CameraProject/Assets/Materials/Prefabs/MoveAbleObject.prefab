@@ -12,7 +12,7 @@ GameObject:
   - 61: {fileID: 6199110}
   - 114: {fileID: 11415590}
   - 212: {fileID: 21262744}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MoveAbleObject
   m_TagString: Weight
   m_Icon: {fileID: 0}
@@ -126,6 +126,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

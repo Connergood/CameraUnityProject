@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 486356}
   - 33: {fileID: 3313358}
   - 23: {fileID: 2385288}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sphere (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ GameObject:
   - 4: {fileID: 420494}
   - 33: {fileID: 3309932}
   - 23: {fileID: 2357768}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sphere (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - 4: {fileID: 459940}
   - 33: {fileID: 3303380}
   - 23: {fileID: 2393916}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,7 +64,7 @@ GameObject:
   - 61: {fileID: 6126822}
   - 50: {fileID: 5089196}
   - 114: {fileID: 11470822}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PathMonster
   m_TagString: PathMonster
   m_Icon: {fileID: 0}
@@ -81,7 +81,7 @@ GameObject:
   - 4: {fileID: 466206}
   - 33: {fileID: 3300052}
   - 23: {fileID: 2338306}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sphere (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -371,7 +371,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 198562}
