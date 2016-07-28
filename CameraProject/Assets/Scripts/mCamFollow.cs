@@ -11,6 +11,7 @@ public class mCamFollow : MonoBehaviour {
     Vector2 chosenPoint;
     int chosenElement;
     bool reachedPoint = false;
+    bool beenSeen = false;
 
     public enum State
 	{
@@ -27,7 +28,7 @@ public class mCamFollow : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (state == State.onCamera)
+		if (beenSeen == true)
 		{
             Points();
             if ((chosenPoint == new Vector2(0,0)) || (reachedPoint == true)) // if point hasn't been selected or if point has been reached
@@ -99,6 +100,10 @@ public class mCamFollow : MonoBehaviour {
 		if (screenPoint.z > 0 && screenPoint.x > 0 && screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1)
 		{
 			state = State.onCamera;
+            if(beenSeen == false)
+            {
+                beenSeen = true;
+            }
 		}
 		else
 		{

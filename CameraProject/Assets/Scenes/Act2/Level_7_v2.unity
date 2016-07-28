@@ -12576,11 +12576,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11452978, guid: 7987bdfef8f07c04bb1d308eb04c4ec2, type: 2}
       propertyPath: eventTriggerXLeft
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 11452978, guid: 7987bdfef8f07c04bb1d308eb04c4ec2, type: 2}
       propertyPath: eventTriggerYUp
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7987bdfef8f07c04bb1d308eb04c4ec2, type: 2}
@@ -17296,11 +17296,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -9.010109
+      value: -6.9
       objectReference: {fileID: 0}
     - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.6069005
+      value: 2.22
       objectReference: {fileID: 0}
     - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
       propertyPath: m_LocalPosition.z

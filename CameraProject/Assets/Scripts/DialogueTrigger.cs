@@ -47,16 +47,13 @@ public class DialogueTrigger : MonoBehaviour
                     }
                     else if (EventObject != null)
                     {
-                        if (EventObject.GetComponent<CameraObject>().isEvent == true)
+                        if ((this.transform.position - EventObject.transform.position).magnitude < 2.0f)
                         {
-                            if ((this.transform.position - player.transform.position).magnitude < 1.0f)
+                            this.activated = true;
+                            DialogueCanvas.GetComponent<Dialogue>().ActivateDialogue(dialogue, speakerImages);
+                            for (int i = 0; i < dialogue.Count; i++)
                             {
-                                this.activated = true;
-                                DialogueCanvas.GetComponent<Dialogue>().ActivateDialogue(dialogue, speakerImages);
-                                for (int i = 0; i < dialogue.Count; i++)
-                                {
-                                    dialogue[i] = dialogue[i].Replace("@", System.Environment.NewLine);
-                                }
+                                dialogue[i] = dialogue[i].Replace("@", System.Environment.NewLine);
                             }
                         }
                     }
