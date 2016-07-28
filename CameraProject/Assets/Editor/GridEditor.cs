@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
-//using UnityEditor;
-//using System.IO;
-//[CustomEditor(typeof(Grid))]
-public class GridEditor //: Editor 
+using UnityEditor;
+using System.IO;
+[CustomEditor(typeof(Grid))]
+public class GridEditor : Editor 
 {
 
-/*    Grid grid;
+    Grid grid;
 
     private int oldIndex = 0;
 
@@ -45,16 +45,16 @@ public class GridEditor //: Editor
 
     public override void OnInspectorGUI()
     {
-        //base.OnInspectorGUI();
+        base.OnInspectorGUI();
 
         grid.width = createSlider("Width", grid.width);
         grid.height = createSlider("Height", grid.height);
 
-        if(GUILayout.Button("Open Grid Window"))
+        /*if(GUILayout.Button("Open Grid Window"))
         {
             GridWindow window = (GridWindow)EditorWindow.GetWindow(typeof(GridWindow));
             window.init();
-        }
+        }*/
 
         //Tile Prefab
         EditorGUI.BeginChangeCheck();
@@ -252,6 +252,6 @@ public class GridEditor //: Editor
 
         }
 
-    }*/
+    }
 
 }
