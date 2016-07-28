@@ -7,8 +7,12 @@ public class mCamFollow : MonoBehaviour {
     public float speed = 25.0f;
 	Camera camera;
 	GameObject player;
+    Vector2[] vectors = new Vector2[8];
+    Vector2 chosenPoint;
+    int chosenElement;
+    bool reachedPoint = false;
 
-	public enum State
+    public enum State
 	{
 		onCamera,
 		offCamera
@@ -25,7 +29,13 @@ public class mCamFollow : MonoBehaviour {
 	void Update () {
 		if (state == State.onCamera)
 		{
-			Vector2 d = vToCamera();
+            Points();
+            if ((chosenPoint == new Vector2(0,0)) || (reachedPoint == true)) // if point hasn't been selected or if point has been reached
+            {
+                choosePoint();
+            }
+            chosenPoint = vectors[chosenElement]; //update current position of point
+			Vector2 d = vToPoint();
 			this.GetComponent<Rigidbody2D>().velocity = new Vector3(speed * d.x, speed * d.y);
 		} else
         {
@@ -33,14 +43,55 @@ public class mCamFollow : MonoBehaviour {
         }
 		cameraCheck();
 	}
-	
-	Vector2 vToCamera()
-	{
-		Vector2 vTowards = camera.transform.position - this.transform.position;
-		vTowards.Normalize();
-		vTowards /= 15;
-		return vTowards;
-	}
+
+    public void Points()
+    {
+        // find bounds of camera
+        float height = 2 * camera.orthographicSize;
+        float width = height * camera.aspect;
+
+        // find 8 points around border of camera
+        Vector2 topLeftCorner = new Vector2(camera.transform.position.x - (width/2), camera.transform.position.y - (height / 2));
+        Vector2 topRightCorner = new Vector2(camera.transform.position.x + (width / 2), camera.transform.position.y - (height / 2));
+        Vector2 bottomLeftCorner = new Vector2(camera.transform.position.x - (width / 2), camera.transform.position.y + (height / 2));
+        Vector2 bottomRightCorner = new Vector2(camera.transform.position.x + (width / 2), camera.transform.position.y + (height / 2));
+        Vector2 topMidPoint = new Vector2(camera.transform.position.x, camera.transform.position.y - (height / 2));
+        Vector2 bottomMidPoint = new Vector2(camera.transform.position.x, camera.transform.position.y + (height / 2));
+        Vector2 leftMidPoint = new Vector2(camera.transform.position.x - (width / 2), camera.transform.position.y);
+        Vector2 rightMidPoint = new Vector2(camera.transform.position.x + (width / 2), camera.transform.position.y);
+
+        // add to array
+        vectors[0] = topLeftCorner;
+        vectors[1] = topRightCorner;
+        vectors[2] = bottomLeftCorner;
+        vectors[3] = bottomRightCorner;
+        vectors[4] = topMidPoint;
+        vectors[5] = bottomMidPoint;
+        vectors[6] = leftMidPoint;
+        vectors[7] = rightMidPoint;
+    }
+
+    public void choosePoint()
+    {
+        // randomly pick point to seek
+        int r = Random.Range(0, vectors.Length);
+        chosenElement = r;
+        chosenPoint = vectors[r];
+        reachedPoint = false; 
+    }
+
+    //seek point
+    Vector2 vToPoint()
+    {
+        Vector2 vTowards = new Vector3(chosenPoint.x, chosenPoint.y, 0) - this.transform.position;
+        if(vTowards.magnitude <= 1)
+        {
+            reachedPoint = true;
+        }
+        vTowards.Normalize();
+        vTowards /= 15;
+        return vTowards;
+    }
 
 	public void cameraCheck()
 	{
