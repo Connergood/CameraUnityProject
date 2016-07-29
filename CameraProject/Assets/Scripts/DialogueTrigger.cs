@@ -28,7 +28,56 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (!activated)
         {
-            if (layer == doorMain.GetComponent<DoorMain>().PlayerInLayer)
+            if(doorMain != null)
+            {
+                if (layer == doorMain.GetComponent<DoorMain>().PlayerInLayer)
+                {
+                    if (keyActivated == false)
+                    {
+                        if (EventObject == null)
+                        {
+                            if ((this.transform.position - player.transform.position).magnitude < 1.0f)
+                            {
+                                this.activated = true;
+                                DialogueCanvas.GetComponent<Dialogue>().ActivateDialogue(dialogue, speakerImages);
+                                for (int i = 0; i < dialogue.Count; i++)
+                                {
+                                    dialogue[i] = dialogue[i].Replace("@", System.Environment.NewLine);
+                                }
+                                //GameObject.Find("Main").GetComponent<Main>().lockThingsInPlace(lockPlayer);
+                            }
+                        }
+                        else if (EventObject != null)
+                        {
+                            if ((this.transform.position - EventObject.transform.position).magnitude < 2.0f)
+                            {
+                                this.activated = true;
+                                DialogueCanvas.GetComponent<Dialogue>().ActivateDialogue(dialogue, speakerImages);
+                                for (int i = 0; i < dialogue.Count; i++)
+                                {
+                                    dialogue[i] = dialogue[i].Replace("@", System.Environment.NewLine);
+                                }
+                            }
+                        }
+                    }
+                    else if (keyActivated == true)
+                    {
+                        if (player.GetComponent<PlayerControl>().keyCount == 0)
+                        {
+                            if ((this.transform.position - player.transform.position).magnitude < 1.0f)
+                            {
+                                this.activated = true;
+                                DialogueCanvas.GetComponent<Dialogue>().ActivateDialogue(dialogue, speakerImages);
+                                for (int i = 0; i < dialogue.Count; i++)
+                                {
+                                    dialogue[i] = dialogue[i].Replace("@", System.Environment.NewLine);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            else
             {
                 if (keyActivated == false)
                 {

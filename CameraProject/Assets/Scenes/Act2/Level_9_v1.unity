@@ -869,6 +869,88 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 943bbfc5f9b3d6b48ad11439ef38c9d5, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &217239195
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 20.835215
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -12.356695
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 155912, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_Name
+      value: DialogueTrigger (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[0]
+      value: 'Reporter:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[1]
+      value: That looks like a thick door.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[2]
+      value: 'Camera Woman:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[3]
+      value: It's actually three doors. Look for the switches.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[4]
+      value: 'Mystery Man:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[5]
+      value: I'm coming for ya
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: layer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: DialogueCanvas
+      value: 
+      objectReference: {fileID: 1313494128}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &228474517
 Prefab:
   m_ObjectHideFlags: 0
@@ -2020,6 +2102,109 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 705c80209fe51964da1606ad85c6a3d4, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &390482751
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 63.108826
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.04356903
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 457850, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[0]
+      value: 'Reporter:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[1]
+      value: This room is massive.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[2]
+      value: 'Camera Woman:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[3]
+      value: Medication records, room transfers, day to day observations...
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[4]
+      value: 'Camera Woman:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[5]
+      value: There's a lot that the asylum needed to record.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[6]
+      value: 'Reporter:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[7]
+      value: So we're basically looking for a needle in a haystack?
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[8]
+      value: 'Camera Woman:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[9]
+      value: Most likely, there's a separate, secure room for the records we're looking
+        for.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[10]
+      value: 'Camera Woman:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: dialogue.Array.data[11]
+      value: Let's see if we can find the door.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: layer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490176, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
+      propertyPath: DialogueCanvas
+      value: 
+      objectReference: {fileID: 1313494128}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ffdc61bdfe9f35b4facbf5d29dd0d050, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &397571359
 Prefab:
@@ -3498,7 +3683,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11452978, guid: 7987bdfef8f07c04bb1d308eb04c4ec2, type: 2}
       propertyPath: limitXLeft
-      value: 37
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 11452978, guid: 7987bdfef8f07c04bb1d308eb04c4ec2, type: 2}
       propertyPath: limitXRight
@@ -3511,6 +3696,18 @@ Prefab:
     - target: {fileID: 11452978, guid: 7987bdfef8f07c04bb1d308eb04c4ec2, type: 2}
       propertyPath: limitYDown
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 11452978, guid: 7987bdfef8f07c04bb1d308eb04c4ec2, type: 2}
+      propertyPath: interactWhileLocked
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 107314, guid: 7987bdfef8f07c04bb1d308eb04c4ec2, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 167398, guid: 7987bdfef8f07c04bb1d308eb04c4ec2, type: 2}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7987bdfef8f07c04bb1d308eb04c4ec2, type: 2}
@@ -5182,11 +5379,11 @@ Prefab:
       objectReference: {fileID: 1192306871}
     - target: {fileID: 11491350, guid: 66f2f7d1585fbdd4dbd4eea91fa45af0, type: 2}
       propertyPath: translateX
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11491350, guid: 66f2f7d1585fbdd4dbd4eea91fa45af0, type: 2}
       propertyPath: translateY
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 11491350, guid: 66f2f7d1585fbdd4dbd4eea91fa45af0, type: 2}
       propertyPath: rotate
@@ -5524,11 +5721,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11437400, guid: 43f7f34ee11b93444827c99e6d0b3600, type: 2}
       propertyPath: translateX
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11437400, guid: 43f7f34ee11b93444827c99e6d0b3600, type: 2}
       propertyPath: translateY
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 11437400, guid: 43f7f34ee11b93444827c99e6d0b3600, type: 2}
       propertyPath: rotate
@@ -5923,6 +6120,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 943bbfc5f9b3d6b48ad11439ef38c9d5, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1313494128 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 132096, guid: 3e0bb7df04ef8a148b276ecb08c01366, type: 2}
+  m_PrefabInternal: {fileID: 2128498104}
 --- !u!1001 &1316564898
 Prefab:
   m_ObjectHideFlags: 0
