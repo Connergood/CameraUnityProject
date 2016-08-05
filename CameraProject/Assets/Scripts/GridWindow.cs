@@ -2,10 +2,10 @@
 using System.Collections;
 //using UnityEditor;
 
-public class GridWindow //: EditorWindow
+public class GridWindow// : EditorWindow
 {
-
-  /*  Grid grid;
+    /*
+    Grid grid;
 
     public void init()
     {

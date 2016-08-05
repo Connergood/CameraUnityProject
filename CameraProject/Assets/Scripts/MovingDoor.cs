@@ -31,7 +31,11 @@ public class MovingDoor : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         myBody.velocity = vel;
-	}
+        if (!GetComponent<SpriteRenderer>().enabled)
+        {
+            myBody.velocity = new Vector2(0.0f, 0.0f);
+        }
+    }
 
     void OnCollisionEnter2D(Collision2D hit)
     {

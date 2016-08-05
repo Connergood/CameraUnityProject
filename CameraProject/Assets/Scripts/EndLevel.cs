@@ -26,8 +26,8 @@ public class EndLevel : MonoBehaviour {
 
     IEnumerator ChangeLevel()
     {
-        float fadeTime = GameObject.Find("Main").GetComponent<Fading>().BeginFade(1);
-        yield return new WaitForSeconds(fadeTime);
+        //sfloat fadeTime = GameObject.Find("Main").GetComponent<Fading>().BeginFade(1);
+        yield return new WaitForSeconds(0.0f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

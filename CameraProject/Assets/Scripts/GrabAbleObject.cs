@@ -45,11 +45,12 @@ public class GrabAbleObject : MonoBehaviour {
             if (state == State.locked)
             {
                 transform.position = new Vector3(Player.transform.position.x + difference.x, Player.transform.position.y + difference.y, 0.00f);
+                //transform.parent = GameObject.Find("Player").transform;
             }
             else
             {
-                difference = new Vector2(transform.position.x - Player.transform.position.x,
-                                                  transform.position.y - Player.transform.position.y);
+                difference = new Vector2(transform.position.x - Player.transform.position.x, transform.position.y - Player.transform.position.y);
+                //transform.parent = null;
             }
         }
         if(gameObject.GetComponent<BoxCollider2D>().enabled == false)

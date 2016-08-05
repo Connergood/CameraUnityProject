@@ -3,14 +3,14 @@ using System.Collections;
 
 public class Grid : MonoBehaviour {
 
-    public float width = 32.0f;
+   /* public float width = 32.0f;
     public float height = 32.0f;
 
     public Color color = Color.white;
 
     public Transform tilePrefab;
 
-    public TileSet[] setOfTiles;
+    //public TileSet[] setOfTiles;
 
     public TileSet tileSet;
 
@@ -29,5 +29,5 @@ public class Grid : MonoBehaviour {
         {
             Gizmos.DrawLine(new Vector3(Mathf.Floor(x / this.width) * this.width, -1000000.0f), new Vector3(Mathf.Floor(x / this.width)* this.width, 1000000.0f));
         }
-    }
+    }*/
 }

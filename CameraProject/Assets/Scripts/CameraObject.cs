@@ -63,6 +63,11 @@ public class CameraObject : MonoBehaviour {
 		else if (!Input.GetButton ("Action Camera")){
 			state = State.still;
 		}
+        if(Input.GetButtonUp("Action Camera"))
+        {
+            Mesh.enabled = true;
+            boxCollider.enabled = true;
+        }
 		//if we are locked move the object based on camera movement
 		if (state == State.locked) {
             // The z is 0.0f so that the player is not affected by the block's movement
@@ -91,10 +96,8 @@ public class CameraObject : MonoBehaviour {
 			}
 		} else { // if we are not locked move the object back to the plane the player is in and calculate difference
 			self.transform.position = new Vector2 (self.transform.position.x, self.transform.position.y);
-			difference = new Vector2 (self.transform.position.x - controller.transform.position.x,
-			                                  self.transform.position.y - controller.transform.position.y);
-            Mesh.enabled = true;
-            boxCollider.enabled = true;
+            difference = new Vector2(self.transform.position.x - controller.transform.position.x,
+                                              self.transform.position.y - controller.transform.position.y);
 
         }
 	}

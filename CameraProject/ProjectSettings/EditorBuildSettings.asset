@@ -23,3 +23,13 @@ EditorBuildSettings:
     path: Assets/Scenes/Act1/Chapter 4.unity
   - enabled: 1
     path: Assets/Scenes/Act1/The Beginning.unity
+  - enabled: 1
+    path: Assets/Scenes/Act2/Level_6_v1.unity
+  - enabled: 1
+    path: Assets/Scenes/Act2/Level_7_v2.unity
+  - enabled: 1
+    path: Assets/Scenes/Act2/Level_8_v1.unity
+  - enabled: 1
+    path: Assets/Scenes/Act2/Level_9_v1.unity
+  - enabled: 1
+    path: Assets/Scenes/Act2/Level_10_Record_Room.unity
