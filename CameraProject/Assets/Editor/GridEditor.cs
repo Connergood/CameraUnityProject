@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
-//using UnityEditor;
+using UnityEditor;
 using System.IO;
-//[CustomEditor(typeof(Grid))]
-public class GridEditor //: //Editor 
+[CustomEditor(typeof(Grid))]
+public class GridEditor : Editor 
 {
-    /*
+    
     Grid grid;
 
     private int oldIndex = 0;
@@ -50,12 +50,12 @@ public class GridEditor //: //Editor
         grid.width = createSlider("Width", grid.width);
         grid.height = createSlider("Height", grid.height);
 
-        /*if(GUILayout.Button("Open Grid Window"))
+        if(GUILayout.Button("Open Grid Window"))
         {
             GridWindow window = (GridWindow)EditorWindow.GetWindow(typeof(GridWindow));
             window.init();
-        }*/
-        /*
+        }
+        
         //Tile Prefab
         EditorGUI.BeginChangeCheck();
         var newTilePrefab = (Transform)EditorGUILayout.ObjectField("Tile Prefab", grid.tilePrefab, typeof(Transform), false);
@@ -252,6 +252,6 @@ public class GridEditor //: //Editor
 
         }
 
-    }*/
+    }
 
 }
